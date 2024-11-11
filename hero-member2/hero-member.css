@@ -35,11 +35,10 @@
 }
 
 .hero-member-main-start-section {
-  margin: -64px 0px 0px 0px;
+  /* margin: 0px 0px 0px 0px; */
   max-width: 100%;
   position: relative;
   transition: all 0.4s ease-in-out;
-
 }
 
 .hero-member-main-start-section-animation {
@@ -54,7 +53,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 12px;
+  border-radius: 20px;
   transition: all 0.5s ease-in-out;
   position: relative;
 }
@@ -70,8 +69,9 @@
   /* z-index: -1; */
 }
 
-.hero-member-main-start-section-bg-img-animation{
+.hero-member-main-start-section-bg-img-animation {
   height: 662px;
+  border-bottom-left-radius: 20px;
   transition: all 0.5s ease-in-out;
 }
 
@@ -90,7 +90,6 @@
   transition: all 0.5s ease-in-out;
 }
 
-
 .hero-member-main-start-section-content-icon {
   margin: 16px auto;
   width: 80px;
@@ -98,8 +97,7 @@
   font-size: 66px;
   line-height: 80px;
   color: #f59e0b;
-  transition: all 0.3s ease-in-out;
-
+  transition: all 0.4s ease-in-out;
 }
 
 .hero-member-main-start-section-content-icon-animation {
@@ -116,6 +114,7 @@
   font-size: 16px;
   line-height: 24px;
   margin-top: 16px;
+  font-weight: 700;
 }
 
 .hero-member-main-start-section-content-btn {
@@ -560,12 +559,13 @@
   margin: 128px 0px 0px;
   max-width: 100%;
   position: relative;
+  transition: all 0.4s ease-in-out;
 }
 
-/* .hero-member-main-ad-artist-section-animation {
-    padding: 0 24px;
-    transition: padding 0.2s linear;
-  } */
+.hero-member-main-ad-artist-section-animation {
+  padding: 0 24px;
+  transition: all 0.5s ease-in-out;
+}
 
 .hero-member-main-ad-artist-section-bg-img {
   width: 100%;
@@ -574,12 +574,40 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 12px;
+  border-radius: 20px;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+}
+
+.hero-member-main-ad-artist-section-bg-img::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to bottom, rgba(18, 18, 18), transparent, rgba(18, 18, 18));
+  /* z-index: -1; */
+}
+
+.hero-member-main-ad-artist-section-bg-img-animation {
+  height: 662px;
+  transition: all 0.5s ease-in-out;
 }
 
 .hero-member-main-ad-artist-section-content {
   width: 100%;
   text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(calc(550px / 2 - 50%));
+  transition: all 0.4s ease-in-out;
+}
+
+.hero-member-main-ad-artist-section-content-animation {
+  transform: translateY(calc(662px - 112px));
+  transition: all 0.5s ease-in-out;
 }
 
 .hero-member-main-ad-artist-section-content-icon {
@@ -589,14 +617,13 @@
   font-size: 66px;
   line-height: 80px;
   color: #f59e0b;
-  /* transform: scale(0); */
-  /* transition: all 0.2s linear; */
+  transition: all 0.4s ease-in-out;
 }
 
-/* .hero-member-main-ad-artist-section-content-icon-animation {
-    transform: scale(0);
-    transition: all 0.2s linear;
-  } */
+.hero-member-main-ad-artist-section-content-icon-animation {
+  transform: scale(0);
+  transition: all 0.5s ease-in-out;
+}
 
 .hero-member-main-ad-artist-section-content-title {
   font-size: 48px;
@@ -607,6 +634,7 @@
   font-size: 16px;
   line-height: 24px;
   margin-top: 16px;
+  font-weight: 700;
 }
 
 .hero-member-main-sponsors-creators-section {
@@ -748,12 +776,13 @@
   margin: 128px 0px 0px;
   max-width: 100%;
   position: relative;
+  transition: all 0.4s ease-in-out;
 }
 
-/* .hero-member-main-stores-partners-section-animation {
-    padding: 0 24px;
-    transition: padding 0.2s linear;
-  } */
+.hero-member-main-stores-partners-section-animation {
+  padding: 0 24px;
+  transition: all 0.5s ease-in-out;
+}
 
 .hero-member-main-stores-partners-section-bg-img {
   width: 100%;
@@ -762,12 +791,41 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 12px;
+  border-radius: 20px;
+  transition: all 0.5s ease-in-out;
+  position: relative;
 }
+
+.hero-member-main-stores-partners-section-bg-img::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to bottom, rgba(18, 18, 18), transparent, rgba(18, 18, 18));
+  /* z-index: -1; */
+}
+
+.hero-member-main-stores-partners-section-bg-img-animation {
+  height: 662px;
+  transition: all 0.5s ease-in-out;
+}
+  
 
 .hero-member-main-stores-partners-section-content {
   width: 100%;
   text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(calc(550px / 2 - 50%));
+  transition: all 0.4s ease-in-out;
+}
+
+.hero-member-main-stores-partners-section-content-animation {
+  transform: translateY(calc(662px - 112px));
+  transition: all 0.5s ease-in-out;
 }
 
 .hero-member-main-stores-partners-section-content-icon {
@@ -777,14 +835,13 @@
   font-size: 66px;
   line-height: 80px;
   color: #f59e0b;
-  /* transform: scale(0); */
-  /* transition: all 0.2s linear; */
+  transition: all 0.4s ease-in-out;
 }
 
-/* .hero-member-main-stores-partners-section-content-icon-animation {
+.hero-member-main-stores-partners-section-content-icon-animation {
     transform: scale(0);
-    transition: all 0.2s linear;
-  } */
+    transition: all 0.5s ease-in-out;
+  }
 
 .hero-member-main-stores-partners-section-content-title {
   font-size: 48px;
@@ -795,6 +852,7 @@
   font-size: 16px;
   line-height: 24px;
   margin-top: 16px;
+  font-weight: 700;
 }
 
 .hero-member-main-fanpage-section {

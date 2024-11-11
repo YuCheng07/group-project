@@ -20,28 +20,33 @@ const startSectionContentIcon = document.querySelector(
   ".hero-member-main-start-section-content-icon"
 );
 
-let functionSeciotnAnimetionClass = false;
-
+let functionSectionAnimetionClass = false;
 heroMemberMainContainer.addEventListener("scroll", (e) => {
-  e.stopPropagation();
+  // e.stopPropagation();
+  console.log(e.target);
+
   console.log(e.target.scrollTop);
   console.log(startSection.offsetHeight);
   startSectionHeight = startSection.offsetHeight;
-  if (startSectionHeight / 4 < e.target.scrollTop && functionSeciotnAnimetionClass == false) {
+
+  if (e.target.scrollTop > 0 && functionSectionAnimetionClass == false) {
     startSection.classList.add("hero-member-main-start-section-animation");
     startSectionBgImg.classList.add(
       "hero-member-main-start-section-bg-img-animation"
     );
-    
+
     startSectionContent.classList.add(
       "hero-member-main-start-section-content-animation"
     );
     startSectionContentIcon.classList.add(
       "hero-member-main-start-section-content-icon-animation"
     );
-    functionSeciotnAnimetionClass = true;
+    functionSectionAnimetionClass = true;
   }
-  if (startSectionHeight / 2 > e.target.scrollTop && functionSeciotnAnimetionClass == true) {
+  if (
+    startSectionHeight / 2 > e.target.scrollTop &&
+    functionSectionAnimetionClass == true
+  ) {
     startSection.classList.remove("hero-member-main-start-section-animation");
     startSectionBgImg.classList.remove(
       "hero-member-main-start-section-bg-img-animation"
@@ -52,10 +57,9 @@ heroMemberMainContainer.addEventListener("scroll", (e) => {
     startSectionContentIcon.classList.remove(
       "hero-member-main-start-section-content-icon-animation"
     );
-    functionSeciotnAnimetionClass = false;
+    functionSectionAnimetionClass = false;
   }
 });
-
 
 // card price
 
@@ -230,23 +234,24 @@ functionSectionRightBtn.addEventListener("click", () => {
 });
 
 // 自動輪播
-
-setInterval(() => {
-  if (screenLeft == 0) {
+let firstStart = true;
+let scrollMoveInterval = setInterval(() => {
+  if (firstStart == true) {
     functionSectionContent.scrollTo({
       left: functionSectionContent.scrollLeft + 456,
       behavior: "smooth",
     });
+    firstStart = false;
   }
+
   functionSectionContent.scrollTo({
     left: functionSectionContent.scrollLeft + 452,
     behavior: "smooth",
   });
-  console.log(screenLeft);
-  
-},3000)
+  // console.log("move");
+}, 3000);
 
-// function區域 拖動功能
+// function區域 拖動功能 未完成X
 
 // 滑鼠按下
 let isDragging = false;
