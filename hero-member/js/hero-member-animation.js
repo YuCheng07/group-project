@@ -26,7 +26,7 @@ heroMemberMainContainer.addEventListener("scroll", (e) => {
   // console.log(e.target);
 
   // console.log(e.target.scrollTop);
-  // console.log(startSection.offsetHeight);
+  console.log(startSection.offsetTop);
   startSectionHeight = startSection.offsetHeight;
 
   if (e.target.scrollTop > 0 && functionSectionAnimetionClass == false) {
@@ -42,9 +42,8 @@ heroMemberMainContainer.addEventListener("scroll", (e) => {
       "hero-member-main-start-section-content-icon-animation"
     );
     functionSectionAnimetionClass = true;
-  }
-  if (
-    startSectionHeight / 2 > e.target.scrollTop &&
+  }else if (
+    e.target.scrollTop < startSectionHeight / 2 &&
     functionSectionAnimetionClass == true
   ) {
     startSection.classList.remove("hero-member-main-start-section-animation");
@@ -58,6 +57,122 @@ heroMemberMainContainer.addEventListener("scroll", (e) => {
       "hero-member-main-start-section-content-icon-animation"
     );
     functionSectionAnimetionClass = false;
+  }
+});
+
+// 添加ad artist section動畫
+
+let adArtistSectionHeight = 0;
+
+const adArtistSection = document.querySelector(".hero-member-main-ad-artist-section");
+
+const adArtistSectionBgImg = document.querySelector(
+  ".hero-member-main-ad-artist-section-bg-img"
+);
+
+const adArtistSectionContent = document.querySelector(
+  ".hero-member-main-ad-artist-section-content"
+);
+
+const adArtistSectionContentIcon = document.querySelector(
+  ".hero-member-main-ad-artist-section-content-icon"
+);
+
+let adArtistSectionAnimetionClass = false;
+heroMemberMainContainer.addEventListener("scroll", (e) => {
+  // e.stopPropagation();
+  // console.log(e.target);
+
+  // console.log(e.target.scrollTop);
+  // console.log(adArtistSection.offsetTop);
+  adArtistSectionHeight = adArtistSection.offsetHeight;
+
+  if (e.target.scrollTop > 2222 && adArtistSectionAnimetionClass == false) {
+    adArtistSection.classList.add("hero-member-main-ad-artist-section-animation");
+    adArtistSectionBgImg.classList.add(
+      "hero-member-main-ad-artist-section-bg-img-animation"
+    );
+
+    adArtistSectionContent.classList.add(
+      "hero-member-main-ad-artist-section-content-animation"
+    );
+    adArtistSectionContentIcon.classList.add(
+      "hero-member-main-ad-artist-section-content-icon-animation"
+    );
+    adArtistSectionAnimetionClass = true;
+  }else if (
+    e.target.scrollTop < adArtistSectionHeight + 2222 &&
+    adArtistSectionAnimetionClass == true
+  ) {
+    adArtistSection.classList.remove("hero-member-main-ad-artist-section-animation");
+    adArtistSectionBgImg.classList.remove(
+      "hero-member-main-ad-artist-section-bg-img-animation"
+    );
+    adArtistSectionContent.classList.remove(
+      "hero-member-main-ad-artist-section-content-animation"
+    );
+    adArtistSectionContentIcon.classList.remove(
+      "hero-member-main-ad-artist-section-content-icon-animation"
+    );
+    adArtistSectionAnimetionClass = false;
+  }
+});
+
+
+// 添加ad artist section動畫
+
+let storesPartnersSectionHeight = 0;
+
+const storesPartnersSection = document.querySelector(".hero-member-main-stores-partners-section");
+
+const storesPartnersSectionBgImg = document.querySelector(
+  ".hero-member-main-stores-partners-section-bg-img"
+);
+
+const storesPartnersSectionContent = document.querySelector(
+  ".hero-member-main-stores-partners-section-content"
+);
+
+const storesPartnersSectionContentIcon = document.querySelector(
+  ".hero-member-main-stores-partners-section-content-icon"
+);
+
+let storesPartnersSectionAnimetionClass = false;
+heroMemberMainContainer.addEventListener("scroll", (e) => {
+  // e.stopPropagation();
+  // console.log(e.target);
+
+  // console.log(storesPartnersSection.offsetTop);
+  storesPartnersSectionHeight = storesPartnersSection.offsetHeight;
+
+  if (e.target.scrollTop > 3993 && storesPartnersSectionAnimetionClass == false) {
+    storesPartnersSection.classList.add("hero-member-main-stores-partners-section-animation");
+    storesPartnersSectionBgImg.classList.add(
+      "hero-member-main-stores-partners-section-bg-img-animation"
+    );
+
+    storesPartnersSectionContent.classList.add(
+      "hero-member-main-stores-partners-section-content-animation"
+    );
+    storesPartnersSectionContentIcon.classList.add(
+      "hero-member-main-stores-partners-section-content-icon-animation"
+    );
+    storesPartnersSectionAnimetionClass = true;
+  }else if (
+    e.target.scrollTop < storesPartnersSectionHeight + 3993 &&
+    storesPartnersSectionAnimetionClass == true
+  ) {
+    storesPartnersSection.classList.remove("hero-member-main-stores-partners-section-animation");
+    storesPartnersSectionBgImg.classList.remove(
+      "hero-member-main-stores-partners-section-bg-img-animation"
+    );
+    storesPartnersSectionContent.classList.remove(
+      "hero-member-main-stores-partners-section-content-animation"
+    );
+    storesPartnersSectionContentIcon.classList.remove(
+      "hero-member-main-stores-partners-section-content-icon-animation"
+    );
+    storesPartnersSectionAnimetionClass = false;
   }
 });
 
@@ -429,3 +544,36 @@ storesAboutSectionRightBtn.addEventListener("click", () => {
   });
   // console.log(storesAboutSectionContent.scrollLeft);
 });
+
+// 自動輪播
+let storesAboutFirstStart = true;
+let storesAboutScrollMoveInterval = setInterval(() => {
+  if (storesAboutFirstStart == true) {
+    if (window.innerWidth < 1200) {
+      storesAboutSectionContent.scrollTo({
+        left: storesAboutSectionContent.scrollLeft + 340,
+        behavior: "smooth",
+      });
+      storesAboutFirstStart = false;
+    } else {
+      storesAboutSectionContent.scrollTo({
+        left: storesAboutSectionContent.scrollLeft + 456,
+        behavior: "smooth",
+      });
+      storesAboutFirstStart = false;
+      console.log(window.innerWidth);
+    }
+  } else if (storesAboutFirstStart == false) {
+    if (window.innerWidth < 1200) {
+      storesAboutSectionContent.scrollTo({
+        left: storesAboutSectionContent.scrollLeft + 340,
+        behavior: "smooth",
+      });
+    } else {
+      storesAboutSectionContent.scrollTo({
+        left: storesAboutSectionContent.scrollLeft + 452,
+        behavior: "smooth",
+      });
+    }
+  }
+}, 3000);
