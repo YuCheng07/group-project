@@ -43,6 +43,10 @@
   stroke: white;
 }
 
+.sidebar-menu li:last-child {
+  display: none;
+}
+
 .w-7 {
   width: 1.75rem;
 }
@@ -91,7 +95,7 @@
 }
 
 .translate-btn::after {
-  content: '';
+  content: "";
   position: absolute;
   border-top: 1px solid #3f3f46;
   top: 50px;
@@ -115,6 +119,12 @@
     z-index: 999;
     display: flex;
     padding: 0px;
+    background-color: transparent;
+    background-image: linear-gradient(
+      to bottom,
+      transparent,rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 1)
+    );
   }
 
   .sidebar-head {
@@ -134,6 +144,10 @@
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
+  }
+
+  .sidebar-menu li:last-child {
+    display: block;
   }
 
   .sidebar-menu li h2 {

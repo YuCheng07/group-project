@@ -42,7 +42,7 @@ heroMemberMainContainer.addEventListener("scroll", (e) => {
       "hero-member-main-start-section-content-icon-animation"
     );
     functionSectionAnimetionClass = true;
-  }else if (
+  } else if (
     e.target.scrollTop < startSectionHeight / 2 &&
     functionSectionAnimetionClass == true
   ) {
@@ -64,7 +64,9 @@ heroMemberMainContainer.addEventListener("scroll", (e) => {
 
 let adArtistSectionHeight = 0;
 
-const adArtistSection = document.querySelector(".hero-member-main-ad-artist-section");
+const adArtistSection = document.querySelector(
+  ".hero-member-main-ad-artist-section"
+);
 
 const adArtistSectionBgImg = document.querySelector(
   ".hero-member-main-ad-artist-section-bg-img"
@@ -88,7 +90,9 @@ heroMemberMainContainer.addEventListener("scroll", (e) => {
   adArtistSectionHeight = adArtistSection.offsetHeight;
 
   if (e.target.scrollTop > 2222 && adArtistSectionAnimetionClass == false) {
-    adArtistSection.classList.add("hero-member-main-ad-artist-section-animation");
+    adArtistSection.classList.add(
+      "hero-member-main-ad-artist-section-animation"
+    );
     adArtistSectionBgImg.classList.add(
       "hero-member-main-ad-artist-section-bg-img-animation"
     );
@@ -100,11 +104,13 @@ heroMemberMainContainer.addEventListener("scroll", (e) => {
       "hero-member-main-ad-artist-section-content-icon-animation"
     );
     adArtistSectionAnimetionClass = true;
-  }else if (
+  } else if (
     e.target.scrollTop < adArtistSectionHeight + 2222 &&
     adArtistSectionAnimetionClass == true
   ) {
-    adArtistSection.classList.remove("hero-member-main-ad-artist-section-animation");
+    adArtistSection.classList.remove(
+      "hero-member-main-ad-artist-section-animation"
+    );
     adArtistSectionBgImg.classList.remove(
       "hero-member-main-ad-artist-section-bg-img-animation"
     );
@@ -118,12 +124,13 @@ heroMemberMainContainer.addEventListener("scroll", (e) => {
   }
 });
 
-
 // 添加ad artist section動畫
 
 let storesPartnersSectionHeight = 0;
 
-const storesPartnersSection = document.querySelector(".hero-member-main-stores-partners-section");
+const storesPartnersSection = document.querySelector(
+  ".hero-member-main-stores-partners-section"
+);
 
 const storesPartnersSectionBgImg = document.querySelector(
   ".hero-member-main-stores-partners-section-bg-img"
@@ -145,8 +152,13 @@ heroMemberMainContainer.addEventListener("scroll", (e) => {
   // console.log(storesPartnersSection.offsetTop);
   storesPartnersSectionHeight = storesPartnersSection.offsetHeight;
 
-  if (e.target.scrollTop > 3993 && storesPartnersSectionAnimetionClass == false) {
-    storesPartnersSection.classList.add("hero-member-main-stores-partners-section-animation");
+  if (
+    e.target.scrollTop > 3993 &&
+    storesPartnersSectionAnimetionClass == false
+  ) {
+    storesPartnersSection.classList.add(
+      "hero-member-main-stores-partners-section-animation"
+    );
     storesPartnersSectionBgImg.classList.add(
       "hero-member-main-stores-partners-section-bg-img-animation"
     );
@@ -158,11 +170,13 @@ heroMemberMainContainer.addEventListener("scroll", (e) => {
       "hero-member-main-stores-partners-section-content-icon-animation"
     );
     storesPartnersSectionAnimetionClass = true;
-  }else if (
+  } else if (
     e.target.scrollTop < storesPartnersSectionHeight + 3993 &&
     storesPartnersSectionAnimetionClass == true
   ) {
-    storesPartnersSection.classList.remove("hero-member-main-stores-partners-section-animation");
+    storesPartnersSection.classList.remove(
+      "hero-member-main-stores-partners-section-animation"
+    );
     storesPartnersSectionBgImg.classList.remove(
       "hero-member-main-stores-partners-section-bg-img-animation"
     );
@@ -343,14 +357,11 @@ const functionSectionContent = document.querySelector(
 
 const functionSectionContentLastItem = document.querySelector(
   ".hero-member-main-function-section-content-last-item"
-)
-console.log(functionSectionContentLastItem.);
+);
 
-const functionSectionContentContainer = functionSectionContent.getBoundingClientRect();
+const functionSectionContentContainer =
+  functionSectionContent.getBoundingClientRect();
 console.log(functionSectionContentContainer.right);
-console.log(functionSection.scrollX);
-
-
 
 // console.log(functionSectionContent);
 //   functionSectionContent.scrollLeft = 200;
@@ -359,40 +370,39 @@ console.log(functionSection.scrollX);
 // 監聽左按鈕
 
 functionSectionLeftBtn.addEventListener("click", () => {
-  // if(screenLeft > functionSectionContent.scrollWidth - functionSectionContent.clientWidth){ {
-  //     functionSectionContent.scrollTo({
-  //         left: functionSectionContent.scrollLeft - 432,
-  //         behavior: "smooth"
-  //       })
-  // }
-  functionSectionContent.scrollTo({
-    left: functionSectionContent.scrollLeft - 452,
-    behavior: "smooth",
-  });
+  if (window.innerWidth < 1200) {
+    functionSectionContent.scrollTo({
+      left: functionSectionContent.scrollLeft - 340,
+      behavior: "smooth",
+    });
+  } else {
+    functionSectionContent.scrollTo({
+      left: functionSectionContent.scrollLeft - 452,
+      behavior: "smooth",
+    });
+  }
 });
 
 // 監聽右按鈕
 
 functionSectionRightBtn.addEventListener("click", () => {
-  if (screenLeft == 0) {
+  if (window.innerWidth < 1200) {
     functionSectionContent.scrollTo({
-      left: functionSectionContent.scrollLeft + 456,
+      left: functionSectionContent.scrollLeft + 340,
+      behavior: "smooth",
+    });
+  } else {
+    functionSectionContent.scrollTo({
+      left: functionSectionContent.scrollLeft + 452,
       behavior: "smooth",
     });
   }
-  functionSectionContent.scrollTo({
-    left: functionSectionContent.scrollLeft + 452,
-    behavior: "smooth",
-  });
   // console.log(functionSectionContent.scrollLeft);
 });
 
 // 自動輪播
 let firstStart = true;
-let scrollMoveInterval = setInterval(() => {
-  if(functionSectionContent.offsetLeft){
-    // console.log(functionSectionContent.offsetLeft);
-  }
+let scrollMoveInterval = setInterval(() => {  
   if (firstStart == true) {
     if (window.innerWidth < 1200) {
       functionSectionContent.scrollTo({
@@ -474,40 +484,71 @@ const sponsorsCreatorsSectionContent = document.querySelector(
   ".hero-member-main-sponsors-creators-section-content"
 );
 
-// console.log(sponsorsCreatorsSectionContent);
-//   sponsorsCreatorsSectionContent.scrollLeft = 200;
-// console.log(sponsorsCreatorsSectionContent.offsetLeft);
 
 // 監聽左按鈕
 
 sponsorsCreatorsSectionLeftBtn.addEventListener("click", () => {
-  // if(screenLeft > sponsorsCreatorsSectionContent.scrollWidth - sponsorsCreatorsSectionContent.clientWidth){ {
-  //     sponsorsCreatorsSectionContent.scrollTo({
-  //         left: sponsorsCreatorsSectionContent.scrollLeft - 432,
-  //         behavior: "smooth"
-  //       })
-  // }
-  sponsorsCreatorsSectionContent.scrollTo({
-    left: sponsorsCreatorsSectionContent.scrollLeft - 452,
-    behavior: "smooth",
-  });
+  if (window.innerWidth < 1200) {
+    sponsorsCreatorsSectionContent.scrollTo({
+      left: sponsorsCreatorsSectionContent.scrollLeft - 340,
+      behavior: "smooth",
+    });
+  } else {
+    sponsorsCreatorsSectionContent.scrollTo({
+      left: sponsorsCreatorsSectionContent.scrollLeft - 452,
+      behavior: "smooth",
+    });
+  }
 });
 
 // 監聽右按鈕
 
 sponsorsCreatorsSectionRightBtn.addEventListener("click", () => {
-  if (screenLeft == 0) {
+  if (window.innerWidth < 1200) {
     sponsorsCreatorsSectionContent.scrollTo({
-      left: sponsorsCreatorsSectionContent.scrollLeft + 456,
+      left: sponsorsCreatorsSectionContent.scrollLeft + 340,
+      behavior: "smooth",
+    });
+  } else {
+    sponsorsCreatorsSectionContent.scrollTo({
+      left: sponsorsCreatorsSectionContent.scrollLeft + 452,
       behavior: "smooth",
     });
   }
-  sponsorsCreatorsSectionContent.scrollTo({
-    left: sponsorsCreatorsSectionContent.scrollLeft + 452,
-    behavior: "smooth",
-  });
-  // console.log(sponsorsCreatorsSectionContent.scrollLeft);
 });
+
+// 自動輪播
+let sponsorsCreatorsFirstStart = true;
+let sponsorsCreatorsScrollMoveInterval = setInterval(() => {
+  if (sponsorsCreatorsFirstStart == true) {
+    if (window.innerWidth < 1200) {
+      sponsorsCreatorsSectionContent.scrollTo({
+        left: sponsorsCreatorsSectionContent.scrollLeft + 340,
+        behavior: "smooth",
+      });
+      sponsorsCreatorsFirstStart = false;
+    } else {
+      sponsorsCreatorsSectionContent.scrollTo({
+        left: sponsorsCreatorsSectionContent.scrollLeft + 456,
+        behavior: "smooth",
+      });
+      sponsorsCreatorsFirstStart = false;
+      // console.log(window.innerWidth);
+    }
+  } else if (sponsorsCreatorsFirstStart == false) {
+    if (window.innerWidth < 1200) {
+      sponsorsCreatorsSectionContent.scrollTo({
+        left: sponsorsCreatorsSectionContent.scrollLeft + 340,
+        behavior: "smooth",
+      });
+    } else {
+      sponsorsCreatorsSectionContent.scrollTo({
+        left: sponsorsCreatorsSectionContent.scrollLeft + 452,
+        behavior: "smooth",
+      });
+    }
+  }
+}, 3000);
 
 // sponsors creators區域 左右按鈕功能
 
@@ -531,32 +572,33 @@ const storesAboutSectionContent = document.querySelector(
 // 監聽左按鈕
 
 storesAboutSectionLeftBtn.addEventListener("click", () => {
-  // if(screenLeft > storesAboutSectionContent.scrollWidth - storesAboutSectionContent.clientWidth){ {
-  //     storesAboutSectionContent.scrollTo({
-  //         left: storesAboutSectionContent.scrollLeft - 432,
-  //         behavior: "smooth"
-  //       })
-  // }
-  storesAboutSectionContent.scrollTo({
-    left: storesAboutSectionContent.scrollLeft - 452,
-    behavior: "smooth",
-  });
+  if (window.innerWidth < 1200) {
+    storesAboutSectionContent.scrollTo({
+      left: storesAboutSectionContent.scrollLeft - 340,
+      behavior: "smooth",
+    });
+  } else {
+    storesAboutSectionContent.scrollTo({
+      left: storesAboutSectionContent.scrollLeft - 452,
+      behavior: "smooth",
+    });
+  }
 });
 
 // 監聽右按鈕
 
 storesAboutSectionRightBtn.addEventListener("click", () => {
-  if (screenLeft == 0) {
+  if (window.innerWidth < 1200) {
     storesAboutSectionContent.scrollTo({
-      left: storesAboutSectionContent.scrollLeft + 456,
+      left: storesAboutSectionContent.scrollLeft + 340,
+      behavior: "smooth",
+    });
+  } else {
+    storesAboutSectionContent.scrollTo({
+      left: storesAboutSectionContent.scrollLeft + 452,
       behavior: "smooth",
     });
   }
-  storesAboutSectionContent.scrollTo({
-    left: storesAboutSectionContent.scrollLeft + 452,
-    behavior: "smooth",
-  });
-  // console.log(storesAboutSectionContent.scrollLeft);
 });
 
 // 自動輪播

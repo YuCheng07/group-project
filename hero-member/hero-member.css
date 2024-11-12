@@ -70,7 +70,7 @@
 }
 
 .hero-member-main-start-section-bg-img-animation {
-  height: 710px;
+  height: 630px;
   transition: all 0.5s ease-in-out;
 }
 
@@ -85,7 +85,7 @@
 }
 
 .hero-member-main-start-section-content-animation {
-  transform: translateY(calc(662px - 112px));
+  transform: translateY(calc(630px - 112px));
   transition: all 0.5s ease-in-out;
 }
 
@@ -142,7 +142,7 @@
   display: flex;
   gap: 16px;
   padding: 0 24px;
-  margin: 128px 0px 48px 0px;
+  margin: 178px 0px 48px 0px;
 }
 
 .hero-member-main-function-section-controlbar-title {
