@@ -70,8 +70,7 @@
 }
 
 .hero-member-main-start-section-bg-img-animation {
-  height: 662px;
-  border-bottom-left-radius: 20px;
+  height: 710px;
   transition: all 0.5s ease-in-out;
 }
 
@@ -149,6 +148,7 @@
 .hero-member-main-function-section-controlbar-title {
   font-size: 36px;
   font-weight: 700;
+  line-height: 36px;
 }
 
 .hero-member-main-function-section-controlbar-left-btn {
@@ -193,13 +193,15 @@
 
 .hero-member-main-function-section-content-item {
   min-width: 432px;
-  height: 720px;
+  aspect-ratio: 3 / 5;
+  /* height: 720px; */
   border-radius: 16px;
   /* background-color: white; */
   overflow: hidden;
   position: relative;
   transition: transform 0.2s ease-in-out;
   margin-right: 20px;
+  box-sizing: border-box;
 }
 
 .hero-member-main-function-section-content-item:hover {
@@ -328,11 +330,11 @@
 }
 
 .hero-member-main-function-section-content-item-description-box-innerbox-close-btn-wrapper {
-  width: 100%;
+  max-width: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin: -48px 0px 0px 48px;
+  margin: 0px 0px 0px 48px;
   position: sticky;
   top: 20px;
 }
@@ -414,6 +416,18 @@
   left: 16px;
 }
 
+.hero-member-main-function-section-content-last-item-info p {
+  margin-bottom: 8px;
+  opacity: 0.8;
+  font-weight: 700;
+}
+
+.hero-member-main-function-section-content-last-item-info h3 {
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 700;
+}
+
 .hero-member-main-member-type-section {
   width: 100%;
 }
@@ -429,6 +443,7 @@
 .hero-member-main-member-type-section-topbar-title {
   font-size: 36px;
   font-weight: 700;
+  line-height: 36px;
 }
 
 .hero-member-main-member-type-section-content {
@@ -652,6 +667,7 @@
 .hero-member-main-sponsors-creators-section-controlbar-title {
   font-size: 36px;
   font-weight: 700;
+  line-height: 36px
 }
 
 .hero-member-main-sponsors-creators-section-controlbar-left-btn {
@@ -696,7 +712,7 @@
 
 .hero-member-main-sponsors-creators-section-content-item {
   min-width: 432px;
-  height: 720px;
+  aspect-ratio: 3 / 5;
   border-radius: 16px;
   /* background-color: white; */
   overflow: hidden;
@@ -870,6 +886,7 @@
 .hero-member-main-fanpage-section-topbar-title {
   font-size: 36px;
   font-weight: 700;
+  line-height: 36px;
 }
 
 .hero-member-main-fanpage-section-content {
@@ -915,6 +932,7 @@
 .hero-member-main-stores-about-section-controlbar-title {
   font-size: 36px;
   font-weight: 700;
+  line-height: 36px;
 }
 
 .hero-member-main-stores-about-section-controlbar-left-btn {
@@ -959,7 +977,7 @@
 
 .hero-member-main-stores-about-section-content-item {
   min-width: 432px;
-  height: 720px;
+  aspect-ratio: 3 / 5;
   border-radius: 16px;
   /* background-color: white; */
   overflow: hidden;
@@ -1019,8 +1037,4 @@
   display: none;
 }
 
-@media screen and (width < 1200px) {
-  .hero-member-main-content-container {
-    margin: 0px;
-  }
-}
+

@@ -23,10 +23,10 @@ const startSectionContentIcon = document.querySelector(
 let functionSectionAnimetionClass = false;
 heroMemberMainContainer.addEventListener("scroll", (e) => {
   // e.stopPropagation();
-  console.log(e.target);
+  // console.log(e.target);
 
-  console.log(e.target.scrollTop);
-  console.log(startSection.offsetHeight);
+  // console.log(e.target.scrollTop);
+  // console.log(startSection.offsetHeight);
   startSectionHeight = startSection.offsetHeight;
 
   if (e.target.scrollTop > 0 && functionSectionAnimetionClass == false) {
@@ -76,8 +76,16 @@ cardPriceItem.addEventListener("click", () => {
   cardPriceItemDescriptionBox.classList.remove("hidden-info");
 });
 
+cardPriceItemDescriptionBox.addEventListener("click", (e) => {
+  e.stopPropagation();
+  console.log(e.target);
+
+  cardPriceItemDescriptionBox.classList.add("hidden-info");
+});
+
 cardPriceItemDescriptionBoxCloseBtn.addEventListener("click", (e) => {
   e.stopPropagation();
+
   cardPriceItemDescriptionBox.classList.add("hidden-info");
 });
 
@@ -97,6 +105,11 @@ cardCoverItem.addEventListener("click", () => {
 });
 
 cardCoverItemDescriptionBoxCloseBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  cardCoverItemDescriptionBox.classList.add("hidden-info");
+});
+
+cardCoverItemDescriptionBox.addEventListener("click", (e) => {
   e.stopPropagation();
   cardCoverItemDescriptionBox.classList.add("hidden-info");
 });
@@ -121,6 +134,11 @@ deckChartItemDescriptionBoxCloseBtn.addEventListener("click", (e) => {
   deckChartItemDescriptionBox.classList.add("hidden-info");
 });
 
+deckChartItemDescriptionBox.addEventListener("click", (e) => {
+  e.stopPropagation();
+  deckChartItemDescriptionBox.classList.add("hidden-info");
+});
+
 // switch version
 
 const switchVersionItem = document.querySelector(
@@ -139,6 +157,11 @@ switchVersionItem.addEventListener("click", () => {
 });
 
 switchVersionItemDescriptionBoxCloseBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  switchVersionItemDescriptionBox.classList.add("hidden-info");
+});
+
+switchVersionItemDescriptionBox.addEventListener("click", (e) => {
   e.stopPropagation();
   switchVersionItemDescriptionBox.classList.add("hidden-info");
 });
@@ -179,6 +202,11 @@ priceTop10Item.addEventListener("click", () => {
 });
 
 priceTop10ItemDescriptionBoxCloseBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  priceTop10ItemDescriptionBox.classList.add("hidden-info");
+});
+
+priceTop10ItemDescriptionBox.addEventListener("click", (e) => {
   e.stopPropagation();
   priceTop10ItemDescriptionBox.classList.add("hidden-info");
 });
@@ -237,17 +265,34 @@ functionSectionRightBtn.addEventListener("click", () => {
 let firstStart = true;
 let scrollMoveInterval = setInterval(() => {
   if (firstStart == true) {
-    functionSectionContent.scrollTo({
-      left: functionSectionContent.scrollLeft + 456,
-      behavior: "smooth",
-    });
-    firstStart = false;
+    if (window.innerWidth < 1200) {
+      functionSectionContent.scrollTo({
+        left: functionSectionContent.scrollLeft + 340,
+        behavior: "smooth",
+      });
+      firstStart = false;
+    } else {
+      functionSectionContent.scrollTo({
+        left: functionSectionContent.scrollLeft + 456,
+        behavior: "smooth",
+      });
+      firstStart = false;
+      console.log(window.innerWidth);
+    }
+  } else if (firstStart == false) {
+    if (window.innerWidth < 1200) {
+      functionSectionContent.scrollTo({
+        left: functionSectionContent.scrollLeft + 340,
+        behavior: "smooth",
+      });
+    } else {
+      functionSectionContent.scrollTo({
+        left: functionSectionContent.scrollLeft + 452,
+        behavior: "smooth",
+      });
+    }
   }
 
-  functionSectionContent.scrollTo({
-    left: functionSectionContent.scrollLeft + 452,
-    behavior: "smooth",
-  });
   // console.log("move");
 }, 3000);
 
