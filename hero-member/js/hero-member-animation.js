@@ -26,7 +26,7 @@ heroMemberMainContainer.addEventListener("scroll", (e) => {
   // console.log(e.target);
 
   // console.log(e.target.scrollTop);
-  console.log(startSection.offsetTop);
+  // console.log(startSection.offsetTop);
   startSectionHeight = startSection.offsetHeight;
 
   if (e.target.scrollTop > 0 && functionSectionAnimetionClass == false) {
@@ -341,6 +341,17 @@ const functionSectionContent = document.querySelector(
   ".hero-member-main-function-section-content"
 );
 
+const functionSectionContentLastItem = document.querySelector(
+  ".hero-member-main-function-section-content-last-item"
+)
+console.log(functionSectionContentLastItem.);
+
+const functionSectionContentContainer = functionSectionContent.getBoundingClientRect();
+console.log(functionSectionContentContainer.right);
+console.log(functionSection.scrollX);
+
+
+
 // console.log(functionSectionContent);
 //   functionSectionContent.scrollLeft = 200;
 // console.log(functionSectionContent.offsetLeft);
@@ -379,6 +390,9 @@ functionSectionRightBtn.addEventListener("click", () => {
 // 自動輪播
 let firstStart = true;
 let scrollMoveInterval = setInterval(() => {
+  if(functionSectionContent.offsetLeft){
+    // console.log(functionSectionContent.offsetLeft);
+  }
   if (firstStart == true) {
     if (window.innerWidth < 1200) {
       functionSectionContent.scrollTo({
@@ -392,7 +406,7 @@ let scrollMoveInterval = setInterval(() => {
         behavior: "smooth",
       });
       firstStart = false;
-      console.log(window.innerWidth);
+      // console.log(window.innerWidth);
     }
   } else if (firstStart == false) {
     if (window.innerWidth < 1200) {
@@ -561,7 +575,7 @@ let storesAboutScrollMoveInterval = setInterval(() => {
         behavior: "smooth",
       });
       storesAboutFirstStart = false;
-      console.log(window.innerWidth);
+      // console.log(window.innerWidth);
     }
   } else if (storesAboutFirstStart == false) {
     if (window.innerWidth < 1200) {
