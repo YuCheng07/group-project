@@ -359,13 +359,20 @@ const functionSectionContentLastItem = document.querySelector(
   ".hero-member-main-function-section-content-last-item"
 );
 
-const functionSectionContentContainer =
-  functionSectionContent.getBoundingClientRect();
-console.log(functionSectionContentContainer.right);
-
 // console.log(functionSectionContent);
 //   functionSectionContent.scrollLeft = 200;
 // console.log(functionSectionContent.offsetLeft);
+
+// functionSectionContent.addEventListener("mouseover", (e) => {
+//   e.stopPropagation();
+//   closeScrollMoveInterval(scrollMoveInterval);
+// })
+
+// functionSectionContent.addEventListener("mouseout", (e) => {
+//   e.stopPropagation();
+//   reStartScrollMoveInterval(scrollMoveInterval, functionSectionContent);
+// })
+
 
 // 監聽左按鈕
 
@@ -401,39 +408,111 @@ functionSectionRightBtn.addEventListener("click", () => {
 });
 
 // 自動輪播
+// console.log(functionSectionContentLastItem.offsetLeft);
+
 let firstStart = true;
-let scrollMoveInterval = setInterval(() => {  
-  if (firstStart == true) {
-    if (window.innerWidth < 1200) {
-      functionSectionContent.scrollTo({
-        left: functionSectionContent.scrollLeft + 340,
-        behavior: "smooth",
-      });
-      firstStart = false;
-    } else {
-      functionSectionContent.scrollTo({
-        left: functionSectionContent.scrollLeft + 456,
-        behavior: "smooth",
-      });
-      firstStart = false;
-      // console.log(window.innerWidth);
-    }
-  } else if (firstStart == false) {
-    if (window.innerWidth < 1200) {
-      functionSectionContent.scrollTo({
-        left: functionSectionContent.scrollLeft + 340,
-        behavior: "smooth",
-      });
-    } else {
-      functionSectionContent.scrollTo({
-        left: functionSectionContent.scrollLeft + 452,
-        behavior: "smooth",
-      });
+let scrollMoveInterval = setInterval(() => {
+  // 判斷滾動條到底
+  if (
+    functionSectionContent.scrollLeft + functionSectionContent.clientWidth >=
+    functionSectionContent.scrollWidth
+  ) {
+    functionSectionContent.scrollTo({
+      left: -functionSectionContent.scrollLeft,
+      behavior: "smooth",
+    });
+    firstStart = true;
+  } else {
+    if (firstStart == true) {
+      if (window.innerWidth < 1200) {
+        functionSectionContent.scrollTo({
+          left: functionSectionContent.scrollLeft + 340,
+          behavior: "smooth",
+        });
+        firstStart = false;
+      } else {
+        functionSectionContent.scrollTo({
+          left: functionSectionContent.scrollLeft + 456,
+          behavior: "smooth",
+        });
+        firstStart = false;
+        // console.log(window.innerWidth);
+      }
+    } else if (firstStart == false) {
+      if (window.innerWidth < 1200) {
+        functionSectionContent.scrollTo({
+          left: functionSectionContent.scrollLeft + 340,
+          behavior: "smooth",
+        });
+      } else {
+        functionSectionContent.scrollTo({
+          left: functionSectionContent.scrollLeft + 452,
+          behavior: "smooth",
+        });
+      }
     }
   }
-
-  // console.log("move");
+  // console.log("總寬度：" + functionSectionContent.scrollWidth);
+  // console.log("目前往左位移：" + functionSectionContent.scrollLeft);
+  // console.log("可視寬度：" + functionSectionContent.clientWidth);
+  // console.log("左位移＋可視寬度" + (functionSectionContent.scrollLeft + functionSectionContent.clientWidth));
 }, 3000);
+
+// 關閉計時器
+
+function closeScrollMoveInterval(interval) {
+  clearInterval(interval);
+  console.log("計時器關閉");
+  
+}
+
+// 重開計時器
+function reStartScrollMoveInterval(interval, scrollMoveElement) {
+console.log("計時器重開");
+
+  interval = setInterval(() => {
+    // 判斷滾動條到底
+    if (
+      scrollMoveElement.scrollLeft + scrollMoveElement.clientWidth >=
+      scrollMoveElement.scrollWidth
+    ) {
+      scrollMoveElement.scrollTo({
+        left: -scrollMoveElement.scrollLeft,
+        behavior: "smooth",
+      });
+      firstStart = true;
+    } else {
+      if (firstStart == true) {
+        if (window.innerWidth < 1200) {
+          scrollMoveElement.scrollTo({
+            left: scrollMoveElement.scrollLeft + 340,
+            behavior: "smooth",
+          });
+          firstStart = false;
+        } else {
+          scrollMoveElement.scrollTo({
+            left: scrollMoveElement.scrollLeft + 456,
+            behavior: "smooth",
+          });
+          firstStart = false;
+          // console.log(window.innerWidth);
+        }
+      } else if (firstStart == false) {
+        if (window.innerWidth < 1200) {
+          scrollMoveElement.scrollTo({
+            left: scrollMoveElement.scrollLeft + 340,
+            behavior: "smooth",
+          });
+        } else {
+          scrollMoveElement.scrollTo({
+            left: scrollMoveElement.scrollLeft + 452,
+            behavior: "smooth",
+          });
+        }
+      }
+    }
+  }, 3000);
+}
 
 // function區域 拖動功能 未完成X
 
@@ -484,7 +563,6 @@ const sponsorsCreatorsSectionContent = document.querySelector(
   ".hero-member-main-sponsors-creators-section-content"
 );
 
-
 // 監聽左按鈕
 
 sponsorsCreatorsSectionLeftBtn.addEventListener("click", () => {
@@ -520,32 +598,45 @@ sponsorsCreatorsSectionRightBtn.addEventListener("click", () => {
 // 自動輪播
 let sponsorsCreatorsFirstStart = true;
 let sponsorsCreatorsScrollMoveInterval = setInterval(() => {
-  if (sponsorsCreatorsFirstStart == true) {
-    if (window.innerWidth < 1200) {
-      sponsorsCreatorsSectionContent.scrollTo({
-        left: sponsorsCreatorsSectionContent.scrollLeft + 340,
-        behavior: "smooth",
-      });
-      sponsorsCreatorsFirstStart = false;
-    } else {
-      sponsorsCreatorsSectionContent.scrollTo({
-        left: sponsorsCreatorsSectionContent.scrollLeft + 456,
-        behavior: "smooth",
-      });
-      sponsorsCreatorsFirstStart = false;
-      // console.log(window.innerWidth);
-    }
-  } else if (sponsorsCreatorsFirstStart == false) {
-    if (window.innerWidth < 1200) {
-      sponsorsCreatorsSectionContent.scrollTo({
-        left: sponsorsCreatorsSectionContent.scrollLeft + 340,
-        behavior: "smooth",
-      });
-    } else {
-      sponsorsCreatorsSectionContent.scrollTo({
-        left: sponsorsCreatorsSectionContent.scrollLeft + 452,
-        behavior: "smooth",
-      });
+  // 判斷滾動條到底
+  if (
+    sponsorsCreatorsSectionContent.scrollLeft +
+      sponsorsCreatorsSectionContent.clientWidth >=
+    sponsorsCreatorsSectionContent.scrollWidth
+  ) {
+    sponsorsCreatorsSectionContent.scrollTo({
+      left: -sponsorsCreatorsSectionContent.scrollLeft,
+      behavior: "smooth",
+    });
+    sponsorsCreatorsFirstStart = true;
+  } else {
+    if (sponsorsCreatorsFirstStart == true) {
+      if (window.innerWidth < 1200) {
+        sponsorsCreatorsSectionContent.scrollTo({
+          left: sponsorsCreatorsSectionContent.scrollLeft + 340,
+          behavior: "smooth",
+        });
+        sponsorsCreatorsFirstStart = false;
+      } else {
+        sponsorsCreatorsSectionContent.scrollTo({
+          left: sponsorsCreatorsSectionContent.scrollLeft + 456,
+          behavior: "smooth",
+        });
+        sponsorsCreatorsFirstStart = false;
+        // console.log(window.innerWidth);
+      }
+    } else if (sponsorsCreatorsFirstStart == false) {
+      if (window.innerWidth < 1200) {
+        sponsorsCreatorsSectionContent.scrollTo({
+          left: sponsorsCreatorsSectionContent.scrollLeft + 340,
+          behavior: "smooth",
+        });
+      } else {
+        sponsorsCreatorsSectionContent.scrollTo({
+          left: sponsorsCreatorsSectionContent.scrollLeft + 452,
+          behavior: "smooth",
+        });
+      }
     }
   }
 }, 3000);
@@ -604,32 +695,45 @@ storesAboutSectionRightBtn.addEventListener("click", () => {
 // 自動輪播
 let storesAboutFirstStart = true;
 let storesAboutScrollMoveInterval = setInterval(() => {
-  if (storesAboutFirstStart == true) {
-    if (window.innerWidth < 1200) {
-      storesAboutSectionContent.scrollTo({
-        left: storesAboutSectionContent.scrollLeft + 340,
-        behavior: "smooth",
-      });
-      storesAboutFirstStart = false;
-    } else {
-      storesAboutSectionContent.scrollTo({
-        left: storesAboutSectionContent.scrollLeft + 456,
-        behavior: "smooth",
-      });
-      storesAboutFirstStart = false;
-      // console.log(window.innerWidth);
-    }
-  } else if (storesAboutFirstStart == false) {
-    if (window.innerWidth < 1200) {
-      storesAboutSectionContent.scrollTo({
-        left: storesAboutSectionContent.scrollLeft + 340,
-        behavior: "smooth",
-      });
-    } else {
-      storesAboutSectionContent.scrollTo({
-        left: storesAboutSectionContent.scrollLeft + 452,
-        behavior: "smooth",
-      });
+  // 判斷滾動條到底
+  if (
+    storesAboutSectionContent.scrollLeft +
+      storesAboutSectionContent.clientWidth >=
+    storesAboutSectionContent.scrollWidth
+  ) {
+    storesAboutSectionContent.scrollTo({
+      left: -storesAboutSectionContent.scrollLeft,
+      behavior: "smooth",
+    });
+    storesAboutFirstStart = true;
+  } else {
+    if (storesAboutFirstStart == true) {
+      if (window.innerWidth < 1200) {
+        storesAboutSectionContent.scrollTo({
+          left: storesAboutSectionContent.scrollLeft + 340,
+          behavior: "smooth",
+        });
+        storesAboutFirstStart = false;
+      } else {
+        storesAboutSectionContent.scrollTo({
+          left: storesAboutSectionContent.scrollLeft + 456,
+          behavior: "smooth",
+        });
+        storesAboutFirstStart = false;
+        // console.log(window.innerWidth);
+      }
+    } else if (storesAboutFirstStart == false) {
+      if (window.innerWidth < 1200) {
+        storesAboutSectionContent.scrollTo({
+          left: storesAboutSectionContent.scrollLeft + 340,
+          behavior: "smooth",
+        });
+      } else {
+        storesAboutSectionContent.scrollTo({
+          left: storesAboutSectionContent.scrollLeft + 452,
+          behavior: "smooth",
+        });
+      }
     }
   }
 }, 3000);
