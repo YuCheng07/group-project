@@ -369,6 +369,38 @@ const functionSectionContentLastItem = document.querySelector(
 //       reStartScrollMoveInterval(scrollMoveInterval, functionSectionContent);
 // });
 
+// 更改按鈕樣式
+
+functionSectionContent.addEventListener("scroll", () => {
+  // console.log("在滾動");
+  // console.log(functionSectionContent.scrollLeft);
+
+  if (functionSectionContent.scrollLeft == 0) {
+    functionSectionLeftBtn.classList.add(
+      "hero-member-main-function-section-controlbar-left-btn-disabled"
+    );
+  } else {
+    if(functionSectionContent.scrollLeft == functionSectionContent.scrollWidth - functionSectionContent.clientWidth){
+      functionSectionRightBtn.classList.add(
+        "hero-member-main-function-section-controlbar-right-btn-disabled"
+      );
+    }else{
+      functionSectionRightBtn.classList.add(
+        "hero-member-main-function-section-controlbar-right-btn"
+      );
+      functionSectionRightBtn.classList.remove(
+        "hero-member-main-function-section-controlbar-right-btn-disabled"
+      );
+    }
+    functionSectionLeftBtn.classList.add(
+      "hero-member-main-function-section-controlbar-left-btn"
+    );
+    functionSectionLeftBtn.classList.remove(
+      "hero-member-main-function-section-controlbar-left-btn-disabled"
+    );
+  }
+});
+
 // 監聽左按鈕
 
 functionSectionLeftBtn.addEventListener("click", () => {
@@ -406,6 +438,7 @@ functionSectionRightBtn.addEventListener("click", () => {
 // console.log(functionSectionContentLastItem.offsetLeft);
 
 let firstStart = true;
+
 let scrollMoveInterval = setInterval(() => {
   // 判斷滾動條到底
   if (
@@ -424,6 +457,7 @@ let scrollMoveInterval = setInterval(() => {
           left: functionSectionContent.scrollLeft + 340,
           behavior: "smooth",
         });
+
         firstStart = false;
       } else {
         functionSectionContent.scrollTo({
@@ -556,6 +590,38 @@ const sponsorsCreatorsSectionContent = document.querySelector(
   ".hero-member-main-sponsors-creators-section-content"
 );
 
+// 更改按鈕樣式
+
+sponsorsCreatorsSectionContent.addEventListener("scroll", () => {
+  // console.log("在滾動");
+  // console.log(sponsorsCreatorsSectionContent.scrollLeft);
+
+  if (sponsorsCreatorsSectionContent.scrollLeft == 0) {
+    sponsorsCreatorsSectionLeftBtn.classList.add(
+      "hero-member-main-sponsors-creators-section-controlbar-left-btn-disabled"
+    );
+  } else {
+    if(sponsorsCreatorsSectionContent.scrollLeft == sponsorsCreatorsSectionContent.scrollWidth - sponsorsCreatorsSectionContent.clientWidth){
+      sponsorsCreatorsSectionRightBtn.classList.add(
+        "hero-member-main-sponsors-creators-section-controlbar-right-btn-disabled"
+      );
+    }else{
+      sponsorsCreatorsSectionRightBtn.classList.add(
+        "hero-member-main-sponsors-creators-section-controlbar-right-btn"
+      );
+      sponsorsCreatorsSectionRightBtn.classList.remove(
+        "hero-member-main-sponsors-creators-section-controlbar-right-btn-disabled"
+      );
+    }
+    sponsorsCreatorsSectionLeftBtn.classList.add(
+      "hero-member-main-sponsors-creators-section-controlbar-left-btn"
+    );
+    sponsorsCreatorsSectionLeftBtn.classList.remove(
+      "hero-member-main-sponsors-creators-section-controlbar-left-btn-disabled"
+    );
+  }
+});
+
 // 監聽左按鈕
 
 sponsorsCreatorsSectionLeftBtn.addEventListener("click", () => {
@@ -652,6 +718,38 @@ const storesAboutSectionContent = document.querySelector(
 // console.log(storesAboutSectionContent);
 //   storesAboutSectionContent.scrollLeft = 200;
 // console.log(storesAboutSectionContent.offsetLeft);
+
+// 更改按鈕樣式
+
+storesAboutSectionContent.addEventListener("scroll", () => {
+  // console.log("在滾動");
+  // console.log(storesAboutSectionContent.scrollLeft);
+
+  if (storesAboutSectionContent.scrollLeft == 0) {
+    storesAboutSectionLeftBtn.classList.add(
+      "hero-member-main-stores-about-section-controlbar-left-btn-disabled"
+    );
+  } else {
+    if(storesAboutSectionContent.scrollLeft == storesAboutSectionContent.scrollWidth - storesAboutSectionContent.clientWidth){
+      storesAboutSectionRightBtn.classList.add(
+        "hero-member-main-stores-about-section-controlbar-right-btn-disabled"
+      );
+    }else{
+      storesAboutSectionRightBtn.classList.add(
+        "hero-member-main-stores-about-section-controlbar-right-btn"
+      );
+      storesAboutSectionRightBtn.classList.remove(
+        "hero-member-main-stores-about-section-controlbar-right-btn-disabled"
+      );
+    }
+    storesAboutSectionLeftBtn.classList.add(
+      "hero-member-main-stores-about-section-controlbar-left-btn"
+    );
+    storesAboutSectionLeftBtn.classList.remove(
+      "hero-member-main-stores-about-section-controlbar-left-btn-disabled"
+    );
+  }
+});
 
 // 監聽左按鈕
 
