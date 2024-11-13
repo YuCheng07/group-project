@@ -359,19 +359,15 @@ const functionSectionContentLastItem = document.querySelector(
   ".hero-member-main-function-section-content-last-item"
 );
 
-
 // 計時器關閉重開功能 未完成X
 
 // functionSectionContent.addEventListener("mouseover", (e) => {
-//   e.stopPropagation();
 //   closeScrollMoveInterval(scrollMoveInterval);
-// })
+// });
 
 // functionSectionContent.addEventListener("mouseout", (e) => {
-//   e.stopPropagation();
-//   reStartScrollMoveInterval(scrollMoveInterval, functionSectionContent);
-// })
-
+//       reStartScrollMoveInterval(scrollMoveInterval, functionSectionContent);
+// });
 
 // 監聽左按鈕
 
@@ -462,12 +458,11 @@ let scrollMoveInterval = setInterval(() => {
 function closeScrollMoveInterval(interval) {
   clearInterval(interval);
   console.log("計時器關閉");
-  
 }
 
 // 重開計時器
 function reStartScrollMoveInterval(interval, scrollMoveElement) {
-console.log("計時器重開");
+  console.log("計時器重開");
 
   interval = setInterval(() => {
     // 判斷滾動條到底
@@ -529,7 +524,6 @@ functionSectionContent.addEventListener("mousedown", (e) => {
 
   // 初始位置 = 滑鼠按下的位置
   startX = e.offsetX;
-  console.log(startX, "初始位置");
 });
 
 functionSectionContent.addEventListener("mousemove", (e) => {
