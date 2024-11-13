@@ -359,9 +359,8 @@ const functionSectionContentLastItem = document.querySelector(
   ".hero-member-main-function-section-content-last-item"
 );
 
-// console.log(functionSectionContent);
-//   functionSectionContent.scrollLeft = 200;
-// console.log(functionSectionContent.offsetLeft);
+
+// 計時器關閉重開功能 未完成X
 
 // functionSectionContent.addEventListener("mouseover", (e) => {
 //   e.stopPropagation();
