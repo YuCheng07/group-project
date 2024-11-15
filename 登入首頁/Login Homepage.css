@@ -205,10 +205,11 @@ nav {
   max-width: 100%;
   max-height: 100%;
   margin: 8px 8px 8px 270px;
-  overflow: auto;
+  overflow-y: auto;
   /* width: 85%; */
+  overflow-x: hidden;
   /* fix */
-
+  
   background-color: #121212;
   padding: 0 1.5rem;
   box-sizing: border-box;
@@ -221,7 +222,7 @@ nav {
   /* fix */
 }
 
-/* new css*/
+/* new css for first swiper*/
 
 .first-swiper-container {
   width: 100%;
@@ -247,10 +248,9 @@ nav {
   position: relative;
   background-image: linear-gradient(to bottom, transparent, (24, 24, 27, 0.9));
   color: rgb(229, 231, 235);
-
 }
 
-.first-swiper-slide a:hover{
+.first-swiper-slide a:hover {
   transform: scale(1.05);
   color: white;
   transition: all 0.2s ease-in-out;
@@ -263,7 +263,11 @@ nav {
   width: 100%;
   height: 20%;
   position: absolute;
-  background-image: linear-gradient(to bottom, transparent, rgba(24, 24, 27, 0.9));
+  background-image: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(24, 24, 27, 0.9)
+  );
 }
 
 .first-swiper-slide img {
@@ -282,14 +286,179 @@ nav {
   font-weight: 700;
 }
 
-/* new css*/
+/* new css for first swiper*/
 
 .card2 {
-  height: 200px;
+  width: 100%;
+  margin-top: 88px;
+  /* fix */
+  /* height: 200px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+  /* fix */
 }
+
+/* new css for card2 */
+.card2 > h2 {
+  color: white;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.card2-top-span {
+  color: white;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.card2-bottom-span {
+  color: rgba(229, 231, 235, 0.8);
+  font-size: 12px;
+  line-height: 16px;
+}
+
+/* new css for card2 */
+
+
+
+/* new css for second swiper*/
+
+.second-swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.second-swiper-slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* overflow: hidden; */
+  border-radius: 12px;
+}
+
+.second-swiper-slide a {
+  width: 30vh;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.second-swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* new css for second swiper*/
+
 .card3 {
-  height: 200px;
+  width: 100%;
+  margin-top: 88px;
+  /* fix */
+  /* height: 200px; */
+  /* fix */
 }
+
+/* new css for third swiper */
+
+.third-swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.third-swiper-slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* overflow: hidden; */
+  border-radius: 12px;
+}
+
+.third-swiper-slide a {
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: all 0.2s ease-in-out;
+}
+
+.third-swiper-slide a:hover {
+  background-color: rgb(36, 36, 36);
+
+  transition: all 0.2s ease-in-out;
+}
+
+.third-swiper-slide-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.third-swiper-slide-content-img {
+  width: 100%;
+}
+
+.third-swiper-slide-content-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.third-swiper-slide-content-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 8px;
+}
+
+.third-swiper-slide-content-info h2 {
+  width: 100%;
+  font-size: 16px;
+  color: white;
+}
+
+.third-swiper-slide-content-info-text {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #A1A1AA;
+}
+
+.third-swiper-slide-content-info-text img {
+  max-width: 40px;
+  max-height: 40px;
+  border-radius: 50%;
+}
+
+.third-swiper-slide-content-info-text-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.third-swiper-slide-content-info-text-box:nth-child(1){
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.third-swiper-slide-content-info-text-box:nth-child(2){
+  font-size: 12px;
+  line-height: 16px;
+}
+
+/* new css for third swiper*/
+
 .title {
   align-items: center;
   display: flex;
