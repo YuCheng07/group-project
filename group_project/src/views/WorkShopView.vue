@@ -1,6 +1,10 @@
 <script setup>
 import '@fortawesome/fontawesome-free/css/all.css'
 import '@fortawesome/fontawesome-free/js/all.js'
+import SideBar from '@/components/SideBar.vue'
+import PageControl from '@/components/PageControl.vue'
+import MainFooter from '@/components/MainFooter.vue'
+import router from '@/router'
 
 const workShopData = [
   {
@@ -30,122 +34,32 @@ const workShopData = [
   },
 ]
 
-const workShopFooterData = [
-  {
-    title: '簡介',
-    linkText: ['關於我們', '與我聯絡', 'Weiβ Schwarz', 'V2新版介紹'],
-  },
-  {
-    title: '資源',
-    linkText: ['Bushi DeckLog', 'Bushi DeckLog EN', '遊々亭價格', '基本規則', '禁卡表'],
-  },
-  {
-    title: '常用連結',
-    linkText: ['卡片問答集', '我的專頁', '偏好設定', '登出帳號', '英雄榜'],
-  },
-]
+
+
 </script>
 
 <template>
   <div class="work-shop-page-container">
-    <div class="sidebar">
-      <div class="logo">
-        <img src="https://bottleneko.app/icon.png" alt="" />
-        <h1>貓X子</h1>
-      </div>
-      <ul class="menu">
-        <li class="menu-item">
-          <a href="#">
-            <span>
-              <i class="fa-solid fa-house"></i>
-            </span>
-            <p>首頁</p>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="#">
-            <span>
-              <i class="fa-regular fa-clone"></i>
-            </span>
-            <p>系列卡表</p>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="#">
-            <span>
-              <i class="fa-regular fa-bookmark"></i>
-            </span>
-            <p>我的牌組</p>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="#">
-            <span>
-              <i class="fa-solid fa-earth-asia"></i>
-            </span>
-            <p>社群</p>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="#">
-            <span>
-              <i class="fa-solid fa-cube"></i>
-            </span>
-            <p>工作坊</p>
-          </a>
-        </li>
-      </ul>
-      <button class="translate-btn">
-        <span>
-          <i class="fa-solid fa-language"></i>
-        </span>
-        <p>原文翻譯</p>
-      </button>
-      <hr class="sidebar-hr" />
-    </div>
+    <SideBar />
     <div class="work-shop-main-content-container">
       <header class="work-shop-header">
-        <div class="page-control">
-          <div class="page-control-left">
-            <button class="page-control-up-btn">
-              <i class="fa-solid fa-chevron-left"></i>
-            </button>
-            <button class="page-control-down-btn">
-              <i class="fa-solid fa-chevron-left"></i>
-            </button>
-          </div>
-          <div class="page-control-right">
-            <button class="page-control-message-btn">
-              <i class="fa-regular fa-bell"></i>
-            </button>
-            <div class="page-control-status-btn">
-              <div class="page-control-status-btn-user-icon">
-                <i class="fa-regular fa-user"></i>
-              </div>
-              <span class="page-control-status-btn-text">登入</span>
-              <div class="page-control-status-btn-arrow-icon">
-                <i class="fa-solid fa-chevron-left"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="page-control-space"></div>
+        <PageControl />
       </header>
       <main class="work-shop-main">
         <div class="user-nav">
-          <div class="user-info-box">
+          <a href="#" class="user-info-box">
             <div class="user-info-box-left-icon">
               <i class="fa-regular fa-user"></i>
             </div>
-            <div class="user-info-box-left-login-content">
+            <div href="#" class="user-info-box-left-login-content">
               <div class="user-info-box-left-login-title">登入帳號</div>
               <div class="user-info-box-left-login-text">前往登入</div>
             </div>
             <div class="user-info-box-right">
               <i class="fa-solid fa-arrow-right"></i>
             </div>
-          </div>
-          <div class="hero-member-box">
+          </a>
+          <router-link :to="{ name: 'hero-member' }" class="hero-member-box">
             <div class="hero-member-box-left-icon">
               <i class="fa-solid fa-star"></i>
             </div>
@@ -156,14 +70,14 @@ const workShopFooterData = [
             <div class="hero-member-box-right">
               <i class="fa-solid fa-arrow-right"></i>
             </div>
-          </div>
+          </router-link>
         </div>
         <div class="work-shop-title">
           <h2>工作坊</h2>
           <p>找到你要的工具，發掘更多玩法。</p>
         </div>
         <div class="work-shop-group">
-          <div class="work-shop-outer" v-for="i in workShopData">
+          <a href="#" class="work-shop-outer" v-for="i in workShopData">
             <div class="work-shop-item">
               <img :src="i.imgUrl" alt="" />
               <div class="work-shop-item-content">
@@ -173,7 +87,7 @@ const workShopFooterData = [
                 <span>{{ i.title }}</span>
               </div>
             </div>
-          </div>
+          </a>
         </div>
         <div class="banner">
           <h2>如果你有任何酷點子</h2>
@@ -181,186 +95,25 @@ const workShopFooterData = [
         </div>
       </main>
       <footer class="work-shop-footer">
-        <div class="work-shop-footer-flexbox">
-          <div class="work-shop-footer-flexbox-left">
-            <ul class="work-shop-footer-flexbox-left-item" v-for="item in workShopFooterData">
-              <li class="work-shop-footer-flexbox-left-item-title">
-                {{ item.title }}
-              </li>
-              <li class="work-shop-footer-flexbox-left-item-link" v-for="link in item.linkText">
-                <a href="#">
-                  {{ link }}
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="work-shop-footer-flexbox-right">
-            <div class="work-shop-footer-flexbox-right-group">
-              <div class="work-shop-footer-flexbox-right-item">
-                <div class="work-shop-footer-flexbox-right-item-icon">
-                  <i class="fa-solid fa-gift"></i>
-                </div>
-                <span>用一杯咖啡讓工程師罐罐休息一下</span>
-              </div>
-              <div class="work-shop-footer-flexbox-right-icon-list">
-                <a href="#">
-                  <i class="fa-brands fa-google-play"></i>
-                </a>
-                <a href="#">
-                  <i class="fa-brands fa-apple"></i>
-                </a>
-                <a href="#">
-                  <i class="fa-brands fa-facebook-f"></i>
-                </a>
-                <a href="#">
-                  <i class="fa-brands fa-discord"></i>
-                </a>
-                <a href="#">
-                  <i class="fa-solid fa-envelope"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr class="work-shop-footer-hr" />
-        <div class="work-shop-footer-copyright">
-          <ul class="work-shop-footer-copyright-left">
-            <li class="work-shop-footer-copyright-left-item">
-              <a href="#">隱私權政策 </a>
-            </li>
-            <li class="work-shop-footer-copyright-left-item">
-              <a href="#">服務條款</a>
-            </li>
-            <li class="work-shop-footer-copyright-left-item">
-              <a href="#">商業合作</a>
-            </li>
-          </ul>
-          <div class="work-shop-footer-copyright-right">
-            卡片資料來源 Weiβ Schwarz. Copyright @ 2023 BottleNeko
-          </div>
-        </div>
+        <MainFooter />
       </footer>
     </div>
   </div>
 </template>
 
-<style>
+<style scoped>
 ::-webkit-scrollbar {
   width: 0;
+  height: 0;
 }
 
 .work-shop-page-container {
   background-color: black;
   max-width: 100%;
-  height: 100vh;
+  max-height: 100vh;
   display: flex;
   box-sizing: border-box;
-  /* justify-content: center; */
-}
-
-.sidebar {
-  min-width: 238px;
-  padding: 16px 16px 0 16px;
-  /* background-color: #06aacd; */
-}
-
-.logo {
-  width: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.logo img {
-  max-width: 40px;
-  max-height: 40px;
-  object-fit: cover;
-  margin-right: 10px;
-}
-
-.logo h1 {
-  color: white;
-  font-size: 26px;
-  font-weight: 700;
-}
-
-.menu {
-  width: 100%;
-  margin-top: 16px;
-  list-style: none;
-}
-
-.menu-item {
-  width: 100%;
-  height: 40px;
-}
-
-.menu-item a {
-  width: 100%;
-  height: 100%;
-  text-decoration: none;
-  color: #a1a1aa;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.menu-item a:hover {
-  color: white;
-}
-
-.menu-item a span {
-  width: 28px;
-  height: 28px;
-  text-align: center;
-  line-height: 28px;
-  font-size: 24px;
-}
-
-.menu-item a p {
-  font-size: 14px;
-  font-weight: 700;
-  font-family:
-    Roboto,
-    Noto Sans TC,
-    sans-serif;
-}
-
-.translate-btn {
-  width: calc(100% + 8px);
-  height: 40px;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  line-height: 40px;
-  gap: 16px;
-  border: none;
-  background-color: black;
-  color: #a1a1aa;
-  font-weight: 700;
-  padding: 0px 0px 0px 8px;
-  margin: 16px 0px 0px -8px;
-  /* background-color: white; */
-  /* color: black; */
-  border-radius: 8px;
-}
-
-.translate-btn:hover {
-  color: white;
-  cursor: pointer;
-  background-image: linear-gradient(to right, #a955f6, #ec499a);
-}
-
-.translate-btn span {
-  width: 28px;
-  height: 28px;
-  text-align: center;
-  line-height: 28px;
-  font-size: 24px;
-}
-
-.sidebar-hr {
-  border: none;
-  border-top: 1px solid #3f3f46;
+  overflow: hidden;
 }
 
 .work-shop-main-content-container {
@@ -376,134 +129,7 @@ const workShopFooterData = [
 
 .work-shop-header {
   width: 100%;
-  padding: 0 24px;
   box-sizing: border-box;
-}
-
-.page-control {
-  width: 100%;
-  padding: 16px 0px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-}
-
-.page-control-left {
-  width: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.page-control-up-btn {
-  width: 32px;
-  height: 32px;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  margin-right: 10px;
-  background-color: #121212;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.page-control-up-btn:hover {
-  cursor: pointer;
-  border: 1px solid white;
-}
-
-.page-control-down-btn {
-  width: 32px;
-  height: 32px;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  margin-right: 10px;
-  background-color: #121212;
-  font-size: 18px;
-  transform: rotateZ(180deg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.page-control-down-btn:hover {
-  cursor: pointer;
-  border: 1px solid white;
-}
-
-.page-control-right {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.page-control-message-btn {
-  width: 32px;
-  height: 32px;
-  color: white;
-  border: none;
-
-  border-radius: 50%;
-  margin-right: 10px;
-  background-color: #121212;
-  font-size: 18px;
-  box-sizing: border-box;
-}
-
-.page-control-message-btn:hover {
-  cursor: pointer;
-  border: 1px solid white;
-}
-
-.page-control-status-btn {
-  width: 92px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  /* background-color: #ec499a; */
-  border-radius: 92px;
-}
-
-.page-control-status-btn:hover {
-  background-color: #1d1d1d;
-  cursor: pointer;
-}
-
-.page-control-status-btn-user-icon {
-  width: 24px;
-  height: 24px;
-  text-align: center;
-  line-height: 24px;
-  margin: 0 2px;
-  font-size: 14px;
-  background-color: black;
-  border-radius: 50%;
-}
-
-.page-control-status-btn-text {
-  width: 28px;
-  text-align: center;
-  font-size: 14px;
-}
-
-.page-control-status-btn-arrow-icon {
-  width: 24px;
-  height: 24px;
-  transform: rotateZ(-90deg);
-  text-align: center;
-  line-height: 24px;
-  font-size: 12px;
-}
-
-.page-control-space {
-  width: 100%;
-  height: 64px;
 }
 
 .work-shop-main {
@@ -513,7 +139,7 @@ const workShopFooterData = [
 }
 
 .user-nav {
-  width: 100%;
+  max-width: 100%;
   display: flex;
   gap: 24px;
 }
@@ -526,10 +152,8 @@ const workShopFooterData = [
   display: flex;
   justify-content: space-between;
   align-items: center;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
+  text-decoration: none;
+  box-sizing: border-box;
 }
 
 .user-info-box-left-icon {
@@ -540,16 +164,22 @@ const workShopFooterData = [
   text-align: center;
   line-height: 80px;
   font-size: 50px;
+  color: white;
 }
 
 .user-info-box-left-login-title {
   font-size: 24px;
   line-height: 32px;
+  font-weight: 700;
+  color: white;
 }
 
 .user-info-box-left-login-text {
   font-size: 16px;
   line-height: 24px;
+  font-weight: 700;
+  opacity: 0.7;
+  color: white;
 }
 
 .user-info-box-right {
@@ -560,6 +190,7 @@ const workShopFooterData = [
   background-color: #35b9d5;
   border-radius: 50%;
   font-size: 30px;
+  color: white;
 }
 
 .hero-member-box {
@@ -570,7 +201,8 @@ const workShopFooterData = [
   display: flex;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer;
+  text-decoration: none;
+  box-sizing: border-box;
 }
 
 .hero-member-box-left-icon {
@@ -585,11 +217,16 @@ const workShopFooterData = [
 .hero-member-box-left-login-title {
   font-size: 24px;
   line-height: 32px;
+  font-weight: 700;
+  color: white;
 }
 
 .hero-member-box-left-login-text {
   font-size: 16px;
   line-height: 24px;
+  font-weight: 700;
+  opacity: 0.7;
+  color: white;
 }
 
 .hero-member-box-right {
@@ -600,6 +237,7 @@ const workShopFooterData = [
   background-color: #dfaf30;
   border-radius: 50%;
   font-size: 30px;
+  color: white;
 }
 
 .work-shop-title {
@@ -628,10 +266,17 @@ const workShopFooterData = [
 }
 
 .work-shop-outer {
-  /* max-width: 210px; */
+  width: 100%;
   border-radius: 12px;
   color: #d4d4d8;
   overflow: hidden;
+}
+
+.work-shop-outer:hover .work-shop-item{
+  cursor: pointer;
+  transform: scale(1.05);
+  color: white;
+  transition: all 0.2s ease-in-out;
 }
 
 .work-shop-item {
@@ -653,12 +298,12 @@ const workShopFooterData = [
   opacity: 0.5;
 }
 
-.work-shop-item:hover {
+/* .work-shop-item:hover {
   cursor: pointer;
   transform: scale(1.05);
   color: white;
   transition: all 0.2s ease-in-out;
-}
+} */
 
 .work-shop-item img {
   width: 100%;
@@ -683,7 +328,6 @@ const workShopFooterData = [
   text-align: center;
   line-height: 32px;
   font-size: 20px;
-  /* background-color: yellowgreen; */
 }
 
 .work-shop-item-content span {
@@ -714,156 +358,5 @@ const workShopFooterData = [
   line-height: 28px;
   color: rgb(229, 231, 235);
 }
-
-.work-shop-footer {
-  max-width: 100%;
-  padding: 80px 32px 64px;
-  box-sizing: border-box;
-}
-
-.work-shop-footer-flexbox {
-  width: 100%;
-  display: flex;
-}
-
-.work-shop-footer-flexbox-left {
-  width: 100%;
-  display: flex;
-  gap: 1rem;
-}
-
-.work-shop-footer-flexbox-left-item {
-  list-style: none;
-  margin-top: 16px;
-  width: 160px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.work-shop-footer-flexbox-left-item-title {
-  width: 100%;
-  color: white;
-  /* font-weight: 700; */
-  line-height: 24px;
-}
-
-.work-shop-footer-flexbox-left-item-link {
-  width: 100%;
-  line-height: 24px;
-}
-
-.work-shop-footer-flexbox-left-item-link a {
-  display: inline-block;
-  width: 100%;
-  text-decoration: none;
-  color: #6d6d76;
-  /* font-weight: 700; */
-}
-
-.work-shop-footer-flexbox-left-item-link a:hover {
-  color: white;
-}
-
-.work-shop-footer-flexbox-right {
-  width: 100%;
-  display: flex;
-  flex-direction: row-reverse;
-}
-
-.work-shop-footer-flexbox-right-group {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.work-shop-footer-flexbox-right-item {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 8px;
-  font-weight: 700;
-  color: #d4d4d8;
-}
-
-.work-shop-footer-flexbox-right-item:hover {
-  cursor: pointer;
-  color: white;
-}
-
-.work-shop-footer-flexbox-right-item-icon {
-  width: 24px;
-  height: 24px;
-  text-align: center;
-  line-height: 24px;
-  color: #d4d4d8;
-  font-size: 20px;
-}
-
-.work-shop-footer-flexbox-right-item span {
-  font-size: 20px;
-  line-height: 28px;
-}
-
-.work-shop-footer-flexbox-right-icon-list {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  gap: 8px;
-}
-
-.work-shop-footer-flexbox-right-icon-list a {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  text-align: center;
-  line-height: 40px;
-  color: white;
-  font-size: 22px;
-  border-radius: 50%;
-  background-color: #3f3f46;
-}
-
-.work-shop-footer-flexbox-right-icon-list a:hover {
-  background-color: #5b5b64;
-}
-
-.work-shop-footer-hr {
-  border: none;
-  border-top: 1px solid #3f3f46;
-  margin: 16px 0px;
-}
-
-.work-shop-footer-copyright {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.work-shop-footer-copyright-left {
-  display: flex;
-  gap: 1rem;
-  list-style: none;
-}
-
-.work-shop-footer-copyright-left-item {
-}
-
-.work-shop-footer-copyright-left-item a {
-  text-decoration: none;
-  color: #6d6d76;
-}
-
-.work-shop-footer-copyright-left-item a:hover {
-  color: white;
-  cursor: pointer;
-}
-
-.work-shop-footer-copyright-right {
-  color: #6d6d76;
-  font-size: 14px;
-}
-
 </style>
+<style src="@/assets/css/work-shop/work-shop-rwd.css" scoped></style>

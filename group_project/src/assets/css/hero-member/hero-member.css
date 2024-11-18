@@ -368,11 +368,6 @@
   color: rgb(255, 255, 255, 0.5);
 }
 
-/* #hero-member-main-function-section-content-item-description-box-innerbox-show-check:checked
-    ~ #hero-member-main-function-section-content-item-description-box {
-    display: none;
-  } */
-
 .hero-member-main-function-section-content-item-description-box-innerbox-gifbox {
   width: 100%;
   margin-top: 48px;

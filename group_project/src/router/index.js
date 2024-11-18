@@ -1,13 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/WorkShopView.vue'
+import WorkShopView from '../views/WorkShopView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomeView,
+      name: 'work-shop',
+      component: WorkShopView,
     },
     // {
     //   path: '/about',
@@ -21,6 +21,11 @@ const router = createRouter({
       path: '/hero-member',
       name: 'hero-member',
       component: () => import('../views/HeroMemberView.vue'),
+    },
+    {
+      path: '/footer',
+      name: 'footer',
+      component: () => import('@/components/MainFooter.vue'),
     }
   ],
 })
