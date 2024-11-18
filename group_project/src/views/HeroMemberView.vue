@@ -1,0 +1,870 @@
+<script setup>
+import { onMounted, ref } from "vue";
+
+onMounted(() => {
+    import("@/assets/js/hero-member/hero-member-animation.js")
+})
+
+</script>
+
+<template>
+    <div class="hero-member-page-container">
+        <div class="sidebar" id="sidebar">
+            <a href="https://bottleneko.app/" class="sidebar-head">
+              <img src="@/assets/img/hero-member/sidebar/bottleneko-icon.png" alt="" class="icon" />
+              <img src="@/assets/img/hero-member/sidebar/bottleneko-icon-text.png" alt="" class="icon-text" />
+            </a>
+            <ul class="sidebar-menu">
+              <li>
+                <a href=""> 
+                  <svg
+                    data-v-11825b1c=""
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    fill="currentColor"
+                    aria-hidden="true"
+                    data-slot="icon"
+                    class="flex-none w-7 h-7"
+                  >
+                    <path
+                      d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z"
+                    ></path>
+                    <path
+                      d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z"
+                    ></path>
+                  </svg>
+                  <h2>首頁</h2>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <svg
+                    data-v-11825b1c=""
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                    data-slot="icon"
+                    class="flex-none w-7 h-7"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M16.5 8.25V6a2.25 2.25 0 0 0-2.25-2.25H6A2.25 2.25 0 0 0 3.75 6v8.25A2.25 2.25 0 0 0 6 16.5h2.25m8.25-8.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-7.5A2.25 2.25 0 0 1 8.25 18v-1.5m8.25-8.25h-6a2.25 2.25 0 0 0-2.25 2.25v6"
+                    ></path>
+                  </svg>
+                  <h2>系列卡表</h2>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <svg
+                    data-v-11825b1c=""
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                    data-slot="icon"
+                    class="flex-none w-7 h-7"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z"
+                    ></path>
+                  </svg>
+                  <h2>我的牌組</h2>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <svg
+                    data-v-11825b1c=""
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                    data-slot="icon"
+                    class="flex-none w-7 h-7"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12.75 3.03v.568c0 .334.148.65.405.864l1.068.89c.442.369.535 1.01.216 1.49l-.51.766a2.25 2.25 0 0 1-1.161.886l-.143.048a1.107 1.107 0 0 0-.57 1.664c.369.555.169 1.307-.427 1.605L9 13.125l.423 1.059a.956.956 0 0 1-1.652.928l-.679-.906a1.125 1.125 0 0 0-1.906.172L4.5 15.75l-.612.153M12.75 3.031a9 9 0 0 0-8.862 12.872M12.75 3.031a9 9 0 0 1 6.69 14.036m0 0-.177-.529A2.25 2.25 0 0 0 17.128 15H16.5l-.324-.324a1.453 1.453 0 0 0-2.328.377l-.036.073a1.586 1.586 0 0 1-.982.816l-.99.282c-.55.157-.894.702-.8 1.267l.073.438c.08.474.49.821.97.821.846 0 1.598.542 1.865 1.345l.215.643m5.276-3.67a9.012 9.012 0 0 1-5.276 3.67m0 0a9 9 0 0 1-10.275-4.835M15.75 9c0 .896-.393 1.7-1.016 2.25"
+                    ></path>
+                  </svg>
+                  <h2>社群</h2>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <svg
+                    data-v-11825b1c=""
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                    data-slot="icon"
+                    class="flex-none w-7 h-7"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"
+                    ></path>
+                  </svg>
+                  <h2>工作坊</h2>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon" class="flex-none w-7 h-7">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"></path>
+                  </svg>
+                  <h2>通知</h2>
+                </a>
+              </li>
+            </ul>
+            <button class="translate-btn" id="translate-btn">
+              <svg
+                data-v-11825b1c=""
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+                data-slot="icon"
+                class="flex-none w-7 h-7"
+              >
+                <path
+                  d="M21.721 12.752a9.711 9.711 0 0 0-.945-5.003 12.754 12.754 0 0 1-4.339 2.708 18.991 18.991 0 0 1-.214 4.772 17.165 17.165 0 0 0 5.498-2.477ZM14.634 15.55a17.324 17.324 0 0 0 .332-4.647c-.952.227-1.945.347-2.966.347-1.021 0-2.014-.12-2.966-.347a17.515 17.515 0 0 0 .332 4.647 17.385 17.385 0 0 0 5.268 0ZM9.772 17.119a18.963 18.963 0 0 0 4.456 0A17.182 17.182 0 0 1 12 21.724a17.18 17.18 0 0 1-2.228-4.605ZM7.777 15.23a18.87 18.87 0 0 1-.214-4.774 12.753 12.753 0 0 1-4.34-2.708 9.711 9.711 0 0 0-.944 5.004 17.165 17.165 0 0 0 5.498 2.477ZM21.356 14.752a9.765 9.765 0 0 1-7.478 6.817 18.64 18.64 0 0 0 1.988-4.718 18.627 18.627 0 0 0 5.49-2.098ZM2.644 14.752c1.682.971 3.53 1.688 5.49 2.099a18.64 18.64 0 0 0 1.988 4.718 9.765 9.765 0 0 1-7.478-6.816ZM13.878 2.43a9.755 9.755 0 0 1 6.116 3.986 11.267 11.267 0 0 1-3.746 2.504 18.63 18.63 0 0 0-2.37-6.49ZM12 2.276a17.152 17.152 0 0 1 2.805 7.121c-.897.23-1.837.353-2.805.353-.968 0-1.908-.122-2.805-.353A17.151 17.151 0 0 1 12 2.276ZM10.122 2.43a18.629 18.629 0 0 0-2.37 6.49 11.266 11.266 0 0 1-3.746-2.504 9.754 9.754 0 0 1 6.116-3.985Z"
+                ></path>
+              </svg>
+              <h2>原文翻譯</h2>
+            </button>
+            <p>沒東西</p>
+        </div>
+        <div class="hero-member-main-content-container">
+          <header class="hero-member-header">
+            <div class="page-control-container">
+                <div class="page-control">
+                  <div class="page-control-left">
+                    <button class="page-control-up-btn">
+                      <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button class="page-control-down-btn">
+                      <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                  </div>
+                  <div class="page-control-right">
+                    <button class="page-control-message-btn">
+                      <i class="fa-regular fa-bell"></i>
+                    </button>
+                    <div class="page-control-status-btn">
+                      <div class="page-control-status-btn-user-icon">
+                        <i class="fa-regular fa-user"></i>
+                      </div>
+                      <span class="page-control-status-btn-text">登入</span>
+                      <div class="page-control-status-btn-arrow-icon">
+                        <i class="fa-solid fa-chevron-left"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </header>
+          <main class="hero-member-main">
+            <section class="hero-member-main-start-section">
+              <div class="hero-member-main-start-section-bg-img"></div>
+              <div class="hero-member-main-start-section-content">
+                <div class="hero-member-main-start-section-content-icon">
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <h1 class="hero-member-main-start-section-content-title">英雄榜</h1>
+                <p class="hero-member-main-start-section-content-text">成為專屬會員，解鎖更多功能</p>
+                <button class="hero-member-main-start-section-content-btn">立即成為英雄</button>
+              </div>
+            </section>
+            <section class="hero-member-main-function-section">
+              <div class="hero-member-main-function-section-controlbar">
+                <h2 class="hero-member-main-function-section-controlbar-title">專屬您的功能</h2>
+                <button class="hero-member-main-function-section-controlbar-left-btn hero-member-main-function-section-controlbar-left-btn-disabled">
+                  <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button
+                  class="hero-member-main-function-section-controlbar-right-btn"
+                >
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+              <div class="hero-member-main-function-section-content"  >
+                <div class="hero-member-main-function-section-content-item" id="function-item-card-price">
+                  <img src="@/assets/img/hero-member/card-price.png" alt="" />
+                  <div class="hero-member-main-function-section-content-item-info">
+                    <p>洞見漲跌</p>
+                    <h3 class="hero-member-main-function-section-content-item-title">卡片價格趨勢</h3>
+                  </div>
+                  <button class="hero-member-main-function-section-content-item-btn">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                  <div class="hero-member-main-function-section-content-item-description-box  hidden-info" id="hero-member-main-function-section-content-item-description-box">
+                    <div class="hero-member-main-function-section-content-item-description-box-innerbox-wrapper" >
+                      <div class="hero-member-main-function-section-content-item-description-box-innerbox">                        
+                        <div class="hero-member-main-function-section-content-item-description-box-innerbox-close-btn-wrapper">                          
+                            <button class="hero-member-main-function-section-content-item-description-box-innerbox-close-btn" id="hero-member-main-function-section-content-item-description-box-innerbox-close-btn">
+                              <i class="fa-solid fa-xmark"></i>
+                            </button>                          
+                        </div>                        
+                        <span>洞見漲跌</span>
+                        <h2>卡片價格趨勢</h2>
+                        <div class="hero-member-main-function-section-content-item-description-box-innerbox-gifbox">
+                          <div class="hero-member-main-function-section-content-item-description-box-innerbox-gifbox-text">
+                            <p>洞悉價格。一覽卡片的漲跌脈動，發現價格的變化趨勢，讓你在交易中更有把握。
+                              點擊卡片詳細，在下方新增了卡價漲跌的圖表，瀏覽近兩週的卡片價格趨勢。</p>
+                          </div>
+                          <div class="hero-member-main-function-section-content-item-description-box-innerbox-gifbox-img" id="hero-member-main-function-section-content-item-description-box-innerbox-gifbox-img">
+                            <img src="@/assets/img/hero-member/card-price-gif.gif" alt="" >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="hero-member-main-function-section-content-item" id="function-item-card-cover">
+                  <img src="@/assets/img/hero-member/card-cover.png" alt="" />
+                  <div class="hero-member-main-function-section-content-item-info">
+                    <p>精美亮麗</p>
+                    <h3 class="hero-member-main-function-section-content-item-title">卡片圖片特效</h3>
+                  </div>
+                  <button class="hero-member-main-function-section-content-item-btn">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                  <div class="hero-member-main-function-section-content-item-description-box  hidden-info" id="hero-member-main-function-section-content-item-description-box">
+                    <div class="hero-member-main-function-section-content-item-description-box-innerbox-wrapper" >
+                      <div class="hero-member-main-function-section-content-item-description-box-innerbox">                        
+                        <div class="hero-member-main-function-section-content-item-description-box-innerbox-close-btn-wrapper">                          
+                            <button class="hero-member-main-function-section-content-item-description-box-innerbox-close-btn" id="hero-member-main-function-section-content-item-description-box-innerbox-close-btn">
+                              <i class="fa-solid fa-xmark"></i>
+                            </button>                          
+                        </div>                        
+                        <span>精美亮麗</span>
+                        <h2>卡片圖片特效</h2>
+                        <div class="hero-member-main-function-section-content-item-description-box-innerbox-gifbox">
+                          <div class="hero-member-main-function-section-content-item-description-box-innerbox-gifbox-text">
+                            <p>與眾不同。稀有就該不一樣。絢麗的特效讓你的牌組閃閃發光。
+                              在偏好設定，可以開啟 "卡片圖片特效"，您的所有卡片會自動帶入特效。</p>
+                          </div>
+                          <div class="hero-member-main-function-section-content-item-description-box-innerbox-gifbox-img" id="hero-member-main-function-section-content-item-description-box-innerbox-gifbox-img">
+                            <img src="@/assets/img/hero-member/card-cover-gif.gif" alt="" >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="hero-member-main-function-section-content-item" id="function-item-deck-chart">
+                  <img src="@/assets/img/hero-member/deck-chart.png" alt="" />
+                  <div class="hero-member-main-function-section-content-item-info">
+                    <p>分析，一目瞭然</p>
+                    <h3 class="hero-member-main-function-section-content-item-title">排組分佈圖</h3>
+                  </div>
+                  <button class="hero-member-main-function-section-content-item-btn">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                  <div class="hero-member-main-function-section-content-item-description-box  hidden-info" id="hero-member-main-function-section-content-item-description-box">
+                    <div class="hero-member-main-function-section-content-item-description-box-innerbox-wrapper" >
+                      <div class="hero-member-main-function-section-content-item-description-box-innerbox">                        
+                        <div class="hero-member-main-function-section-content-item-description-box-innerbox-close-btn-wrapper">                          
+                            <button class="hero-member-main-function-section-content-item-description-box-innerbox-close-btn" id="hero-member-main-function-section-content-item-description-box-innerbox-close-btn">
+                              <i class="fa-solid fa-xmark"></i>
+                            </button>                          
+                        </div>                        
+                        <span>分析，一目瞭然</span>
+                        <h2>牌組分佈圖</h2>
+                        <div class="hero-member-main-function-section-content-item-description-box-innerbox-gifbox">
+                          <div class="hero-member-main-function-section-content-item-description-box-innerbox-gifbox-text">
+                            <p>圖表顯示。一眼就能夠知道這副牌的分佈情況，讓你更了解牌組的特性。
+                              在任何牌組頁面，會自動呈現牌組分佈圖，依據等級與各種顏色張數的分佈。</p>
+                          </div>
+                          <div class="hero-member-main-function-section-content-item-description-box-innerbox-gifbox-img" id="hero-member-main-function-section-content-item-description-box-innerbox-gifbox-img">
+                            <img src="@/assets/img/hero-member/deck-chart-gif.gif" alt="" >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="hero-member-main-function-section-content-item" id="function-item-switch-version">
+                  <img src="@/assets/img/hero-member/switch-version.png" alt="" />
+                  <div class="hero-member-main-function-section-content-item-info">
+                    <p>一鍵更新、快速好用</p>
+                    <h3 class="hero-member-main-function-section-content-item-title">切換卡片版本</h3>
+                  </div>
+                  <button class="hero-member-main-function-section-content-item-btn">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                  <div class="hero-member-main-function-section-content-item-description-box  hidden-info" id="hero-member-main-function-section-content-item-description-box">
+                    <div class="hero-member-main-function-section-content-item-description-box-innerbox-wrapper" >
+                      <div class="hero-member-main-function-section-content-item-description-box-innerbox">                        
+                        <div class="hero-member-main-function-section-content-item-description-box-innerbox-close-btn-wrapper">                          
+                            <button class="hero-member-main-function-section-content-item-description-box-innerbox-close-btn" id="hero-member-main-function-section-content-item-description-box-innerbox-close-btn">
+                              <i class="fa-solid fa-xmark"></i>
+                            </button>                          
+                        </div>                        
+                        <span>一鍵更新、快速好用</span>
+                        <h2>切換卡片版本</h2>
+                        <div class="hero-member-main-function-section-content-item-description-box-innerbox-gifbox">
+                          <div class="hero-member-main-function-section-content-item-description-box-innerbox-gifbox-text">
+                            <p>還在煩惱如何一張張找出卡片版本？一鍵按鈕讓你換然一新。
+                              在編輯牌組時，會額外新增切換版本的按鍵，上方可以一次全牌組切換，而每張卡下方也可以單獨切換。</p>
+                          </div>
+                          <div class="hero-member-main-function-section-content-item-description-box-innerbox-gifbox-img" id="hero-member-main-function-section-content-item-description-box-innerbox-gifbox-img">
+                            <img src="@/assets/img/hero-member/switch-version-gif.gif" alt="" >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="hero-member-main-function-section-content-item" id="function-item-quick-note">
+                  <img src="@/assets/img/hero-member/quick-note.png" alt="" />
+                  <div class="hero-member-main-function-section-content-item-info">
+                    <p>大小事不遺忘</p>
+                    <h3 class="hero-member-main-function-section-content-item-title">快速筆記</h3>
+                  </div>
+                  <button class="hero-member-main-function-section-content-item-btn">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                  <div class="hero-member-main-function-section-content-item-description-box  hidden-info" id="hero-member-main-function-section-content-item-description-box">
+                    <div class="hero-member-main-function-section-content-item-description-box-innerbox-wrapper" >
+                      <div class="hero-member-main-function-section-content-item-description-box-innerbox">                        
+                        <div class="hero-member-main-function-section-content-item-description-box-innerbox-close-btn-wrapper">                          
+                            <button class="hero-member-main-function-section-content-item-description-box-innerbox-close-btn" id="hero-member-main-function-section-content-item-description-box-innerbox-close-btn">
+                              <i class="fa-solid fa-xmark"></i>
+                            </button>                          
+                        </div>                        
+                        <span>大小事不遺忘</span>
+                        <h2>快速筆記</h2>
+                        <div class="hero-member-main-function-section-content-item-description-box-innerbox-gifbox">
+                          <div class="hero-member-main-function-section-content-item-description-box-innerbox-gifbox-text">
+                            <p>缺牌？改牌？怕忘記？快速紀錄當下的想法，隨時隨地不忘記。
+                              在自己的牌組頁面，新增快速筆記的區塊，可以讓你在自己的牌組標記卡片，並且可以新增多組的筆記。</p>
+                          </div>
+                          <div class="hero-member-main-function-section-content-item-description-box-innerbox-gifbox-img" id="hero-member-main-function-section-content-item-description-box-innerbox-gifbox-img">
+                            <img src="@/assets/img/hero-member/quick-note-gif.gif" alt="" >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="hero-member-main-function-section-content-item" id="function-item-price-top10">
+                  <img src="@/assets/img/hero-member/price-top10.png" alt="" />
+                  <div class="hero-member-main-function-section-content-item-info">
+                    <p>掌握最新價格變動</p>
+                    <h3 class="hero-member-main-function-section-content-item-title">卡價指標</h3>
+                  </div>
+                  <button class="hero-member-main-function-section-content-item-btn">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                  <div class="hero-member-main-function-section-content-item-description-box  hidden-info" id="hero-member-main-function-section-content-item-description-box">
+                    <div class="hero-member-main-function-section-content-item-description-box-innerbox-wrapper" >
+                      <div class="hero-member-main-function-section-content-item-description-box-innerbox">                        
+                        <div class="hero-member-main-function-section-content-item-description-box-innerbox-close-btn-wrapper">                          
+                            <button class="hero-member-main-function-section-content-item-description-box-innerbox-close-btn" id="hero-member-main-function-section-content-item-description-box-innerbox-close-btn">
+                              <i class="fa-solid fa-xmark"></i>
+                            </button>                          
+                        </div>                        
+                        <span>掌握最新價格變動</span>
+                        <h2>卡價指標</h2>
+                        <div class="hero-member-main-function-section-content-item-description-box-innerbox-gifbox">
+                          <div class="hero-member-main-function-section-content-item-description-box-innerbox-gifbox-text">
+                            <p>你知道目前最貴的牌組有哪些嗎？你知道漲跌最多的卡片是哪張嗎？
+                              在首頁新增了卡價指標的區塊，會透過貓罐子強大的算力，分析現在的價格排行、價格漲跌、比例漲跌等資訊。</p>
+                          </div>
+                          <div class="hero-member-main-function-section-content-item-description-box-innerbox-gifbox-img" id="hero-member-main-function-section-content-item-description-box-innerbox-gifbox-img">
+                            <img src="@/assets/img/hero-member/price-top10-gif.gif" alt="" >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="hero-member-main-function-section-content-last-item">
+                  <img src="@/assets/img/hero-member/update.png" alt="" />
+                  <div class="hero-member-main-function-section-content-last-item-info">
+                    <p>持續變好</p>
+                    <h3 class="hero-member-main-function-section-content-last-item-title">
+                      更多功能持續更新
+                    </h3>
+                  </div>
+                  <button class="hero-member-main-function-section-content-last-item-btn">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+            </div>
+            </section>
+            <section class="hero-member-main-member-type-section">
+              <div class="hero-member-main-member-type-section-topbar">
+                <h2 class="hero-member-main-member-type-section-topbar-title">探索適合您的用戶</h2>
+              </div>
+              <div class="hero-member-main-member-type-section-content">
+                <a href="#" class="hero-member-main-member-type-section-content-item-outer">
+                  <div class="hero-member-main-member-type-section-content-item">
+                    <h3 class="hero-member-main-member-type-section-content-item-title">
+                      英雄會員(新開幕)
+                    </h3>
+                    <p class="hero-member-main-member-type-section-content-item-description">$12 USD/月</p>
+                    <hr class="hero-member-main-member-type-section-content-item-line"></hr>
+                    <ul class="hero-member-main-member-type-section-content-item-list">
+                      <li>
+                        <i class="fa-solid fa-check"></i>
+                        <span>包含登入會員所有功能</span>
+                      </li>
+                      <li>
+                        <i class="fa-solid fa-check"></i>
+                        <span>無廣告</span>
+                      </li>
+                      <li>
+                        <i class="fa-solid fa-check"></i>
+                        <span>我的牌組 (無限制)</span>
+                      </li>
+                      <li>
+                        <i class="fa-solid fa-check"></i>
+                        <span>專屬進階功能</span>
+                      </li>
+                      <li>
+                        <i class="fa-solid fa-check"></i>
+                        <span>最新更新資訊</span>
+                      </li>
+                      <li>
+                        <i class="fa-solid fa-check"></i>
+                        <span>最新更新資訊</span>
+                      </li>
+                    </ul>
+                    <div class="hero-member-main-member-type-section-content-item-btn">
+                      <button>立即前往 Patreon</button>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="hero-member-main-member-type-section-content-item-outer">
+                  <div class="hero-member-main-member-type-section-content-item">
+                    <h3 class="hero-member-main-member-type-section-content-item-title">
+                      登入會員
+                    </h3>
+                    <p class="hero-member-main-member-type-section-content-item-description">已登入帳號</p>
+                    <div class="hero-member-main-member-type-section-content-item-line"></div>
+                    <ul class="hero-member-main-member-type-section-content-item-list">
+                      <li>
+                        <i class="fa-solid fa-check"></i>
+                        <span>檢索卡片</span>
+                      </li>
+                      <li>
+                        <i class="fa-solid fa-check"></i>
+                        <span>編輯牌組</span>
+                      </li>
+                      <li>
+                        <i class="fa-solid fa-check"></i>
+                        <span>我的牌組 (50副限制)</span>
+                      </li>
+                      <li>
+                        <i class="fa-solid fa-check"></i>
+                        <span>發布文章</span>
+                      </li>
+                      <li>
+                        <i class="fa-solid fa-check"></i>
+                        <span>社群</span>
+                      </li>
+                      <li>
+                        <i class="fa-solid fa-check"></i>
+                        <span>工作坊</span>
+                      </li>
+                      <li>
+                        <i class="fa-solid fa-check"></i>
+                        <span>我的頁面</span>
+                      </li>
+                    </ul>
+                    <div class="hero-member-main-member-type-section-content-item-btn">
+                      <button>前往註冊帳號</button>
+                    </div>
+                  </div>
+                </a>
+                <div class="hero-member-main-member-type-section-content-item-outer">
+                  <div class="hero-member-main-member-type-section-content-item">
+                    <h3 class="hero-member-main-member-type-section-content-item-title">
+                      一般用戶
+                    </h3>
+                    <p class="hero-member-main-member-type-section-content-item-description">尚未登入</p>
+                    <div class="hero-member-main-member-type-section-content-item-line"></div>
+                    <ul class="hero-member-main-member-type-section-content-item-list">
+                      <li>
+                        <i class="fa-solid fa-check"></i>
+                        <span>檢索卡片</span>
+                      </li>
+                      <li>
+                        <i class="fa-solid fa-check"></i>
+                        <span>社群瀏覽</span>
+                      </li>
+                      <li>
+                        <i class="fa-solid fa-check"></i>
+                        <span>工作坊</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="hero-member-main-ad-artist-section">
+              <div class="hero-member-main-ad-artist-section-bg-img"></div>
+              <div class="hero-member-main-ad-artist-section-content">
+                <div class="hero-member-main-ad-artist-section-content-icon">
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <h1 class="hero-member-main-ad-artist-section-content-title">廣告與創作者</h1>
+                <p class="hero-member-main-ad-artist-section-content-text">投放您的內容，展現您的創意</p>
+              </div>
+            </section>
+            <section class="hero-member-main-sponsors-creators-section">
+              <div class="hero-member-main-sponsors-creators-section-controlbar">
+                <h2 class="hero-member-main-sponsors-creators-section-controlbar-title">散播你的內容</h2>
+                <button class="hero-member-main-sponsors-creators-section-controlbar-left-btn">
+                  <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button
+                  class="hero-member-main-sponsors-creators-section-controlbar-right-btn"
+                  
+                >
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+              <div class="hero-member-main-sponsors-creators-section-content">
+                <div class="hero-member-main-sponsors-creators-section-content-item">
+                  <img src="@/assets/img/hero-member/social-ad.png" alt="" />
+                  <div class="hero-member-main-sponsors-creators-section-content-item-info">
+                    <p>每一頁都有您的內容</p>
+                    <h3 class="hero-member-main-sponsors-creators-section-content-item-title">社群廣告文章</h3>
+                  </div>
+                  <button class="hero-member-main-sponsors-creators-section-content-item-btn">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+                <div class="hero-member-main-sponsors-creators-section-content-item">
+                  <img src="@/assets/img/hero-member/home-ad.png" alt="" />
+                  <div class="hero-member-main-sponsors-creators-section-content-item-info">
+                    <p>第一眼就是你</p>
+                    <h3 class="hero-member-main-sponsors-creators-section-content-item-title">首頁廣告區塊</h3>
+                  </div>
+                  <button class="hero-member-main-sponsors-creators-section-content-item-btn">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+                <div class="hero-member-main-sponsors-creators-section-content-item">
+                  <img src="@/assets/img/hero-member/creator-page.png" alt="" />
+                  <div class="hero-member-main-sponsors-creators-section-content-item-info">
+                    <p>經營自己、展現價值</p>
+                    <h3 class="hero-member-main-sponsors-creators-section-content-item-title">創作者專頁</h3>
+                  </div>
+                  <button class="hero-member-main-sponsors-creators-section-content-item-btn">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+                <div class="hero-member-main-sponsors-creators-section-content-item">
+                  <img src="@/assets/img/hero-member/home-topic.png" alt="" />
+                  <div class="hero-member-main-sponsors-creators-section-content-item-info">
+                    <p>活動開跑！快來參加</p>
+                    <h3 class="hero-member-main-sponsors-creators-section-content-item-title">首頁主題投放</h3>
+                  </div>
+                  <button class="hero-member-main-sponsors-creators-section-content-item-btn">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+                <div class="hero-member-main-sponsors-creators-section-content-item">
+                  <img src="@/assets/img/hero-member/hot-video.png" alt="" />
+                  <div class="hero-member-main-sponsors-creators-section-content-item-info">
+                    <p>YouTube 頻道推廣</p>
+                    <h3 class="hero-member-main-sponsors-creators-section-content-item-title">發燒影片</h3>
+                  </div>
+                  <button class="hero-member-main-sponsors-creators-section-content-item-btn">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+            </section>
+            <section class="hero-member-main-fanpage-section">
+              <div class="hero-member-main-fanpage-section-topbar">
+                <h2 class="hero-member-main-fanpage-section-topbar-title">與我聯繫</h2>
+              </div>
+              <div class="hero-member-main-fanpage-section-content">
+                <i class="fa-regular fa-bell"></i>
+                <span>功能實踐中！先行搶先體驗，歡迎與我聯繫！</span>
+                <a href="#">前往貓罐子粉專</a h>
+              </div>
+            </section>
+            <section class="hero-member-main-stores-partners-section">
+              <div class="hero-member-main-stores-partners-section-bg-img"></div>
+              <div class="hero-member-main-stores-partners-section-content">
+                <div class="hero-member-main-stores-partners-section-content-icon">
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <h1 class="hero-member-main-stores-partners-section-content-title">廣告與創作者</h1>
+                <p class="hero-member-main-stores-partners-section-content-text">投放您的內容，展現您的創意</p>
+              </div>
+            </section>
+            <section class="hero-member-main-stores-about-section">
+              <div class="hero-member-main-stores-about-section-controlbar">
+                <h2 class="hero-member-main-stores-about-section-controlbar-title">店家功能</h2>
+                <button class="hero-member-main-stores-about-section-controlbar-left-btn">
+                  <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button
+                  class="hero-member-main-stores-about-section-controlbar-right-btn"
+                >
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+              <div class="hero-member-main-stores-about-section-content">
+                <div class="hero-member-main-stores-about-section-content-item">
+                  <img src="@/assets/img/hero-member/ready.png" alt="" />
+                  <div class="hero-member-main-stores-about-section-content-item-info">
+                    <p>您的附近有店家</p>
+                    <h3 class="hero-member-main-stores-about-section-content-item-title">連結店家</h3>
+                  </div>
+                  <button class="hero-member-main-stores-about-section-content-item-btn">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+                <div class="hero-member-main-stores-about-section-content-item">
+                  <img src="@/assets/img/hero-member/ready.png" alt="" />
+                  <div class="hero-member-main-stores-about-section-content-item-info">
+                    <p>注意！賽事即將開始</p>
+                    <h3 class="hero-member-main-stores-about-section-content-item-title">賽事資訊</h3>
+                  </div>
+                  <button class="hero-member-main-stores-about-section-content-item-btn">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+                <div class="hero-member-main-stores-about-section-content-item">
+                  <img src="@/assets/img/hero-member/ready.png" alt="" />
+                  <div class="hero-member-main-stores-about-section-content-item-info">
+                    <p>看到直接買</p>
+                    <h3 class="hero-member-main-stores-about-section-content-item-title">購買連結</h3>
+                  </div>
+                  <button class="hero-member-main-stores-about-section-content-item-btn">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+                <div class="hero-member-main-stores-about-section-content-item">
+                  <img src="@/assets/img/hero-member/ready.png" alt="" />
+                  <div class="hero-member-main-stores-about-section-content-item-info">
+                    <p>B2B 與我商談</p>
+                    <h3 class="hero-member-main-stores-about-section-content-item-title">與我聯絡</h3>
+                  </div>
+                  <button class="hero-member-main-stores-about-section-content-item-btn">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+            </section>
+          </main>
+          <footer class="hero-member-footer">
+            <div class="work-shop-footer">
+                <div class="work-shop-footer-flexbox">
+                  <div class="work-shop-footer-flexbox-left">
+                    <ul class="work-shop-footer-flexbox-left-item">
+                      <li class="work-shop-footer-flexbox-left-item-title">
+                        簡介
+                      </li>
+                      <li class="work-shop-footer-flexbox-left-item-link">
+                        <a
+                          href="#"
+                          class="work-shop-footer-flexbox-left-item-link-text" 
+                        >
+                        關於我們
+                        </a>
+                      </li>
+                      <li class="work-shop-footer-flexbox-left-item-link">
+                        <a
+                          href="#"
+                          class="work-shop-footer-flexbox-left-item-link-text" 
+                        >
+                        與我聯絡
+                        </a>
+                      </li>
+                      <li class="work-shop-footer-flexbox-left-item-link">
+                        <a
+                          href="#"
+                          class="work-shop-footer-flexbox-left-item-link-text" 
+                        >
+                        Weiβ Schwarz
+                        </a>
+                      </li>
+                      <li class="work-shop-footer-flexbox-left-item-link">
+                        <a
+                          href="#"
+                          class="work-shop-footer-flexbox-left-item-link-text" 
+                        >
+                        V2新版介紹
+                        </a>
+                      </li>
+                    </ul>
+                    <ul class="work-shop-footer-flexbox-left-item">
+                        <li class="work-shop-footer-flexbox-left-item-title">
+                        資源
+                        </li>
+                        <li class="work-shop-footer-flexbox-left-item-link">
+                          <a
+                            href="#"
+                            class="work-shop-footer-flexbox-left-item-link-text" 
+                          >
+                          Bushi DeckLog
+                          </a>
+                        </li>
+                        <li class="work-shop-footer-flexbox-left-item-link">
+                          <a
+                            href="#"
+                            class="work-shop-footer-flexbox-left-item-link-text" 
+                          >
+                          Bushi DeckLog EN
+                          </a>
+                        </li>
+                        <li class="work-shop-footer-flexbox-left-item-link">
+                          <a
+                            href="#"
+                            class="work-shop-footer-flexbox-left-item-link-text" 
+                          >
+                          遊々亭價格
+                          </a>
+                        </li>
+                        <li class="work-shop-footer-flexbox-left-item-link">
+                          <a
+                            href="#"
+                            class="work-shop-footer-flexbox-left-item-link-text" 
+                          >
+                          基本規則
+                          </a>
+                        </li>
+                        <li class="work-shop-footer-flexbox-left-item-link">
+                            <a
+                              href="#"
+                              class="work-shop-footer-flexbox-left-item-link-text" 
+                            >
+                            禁卡表
+                            </a>
+                        </li>
+                      </ul>
+                      <ul class="work-shop-footer-flexbox-left-item">
+                        <li class="work-shop-footer-flexbox-left-item-title">
+                            常用連結
+                        </li>
+                        <li class="work-shop-footer-flexbox-left-item-link">
+                          <a
+                            href="#"
+                            class="work-shop-footer-flexbox-left-item-link-text" 
+                          >
+                          卡片問答集
+                          </a>
+                        </li>
+                        <li class="work-shop-footer-flexbox-left-item-link">
+                          <a
+                            href="#"
+                            class="work-shop-footer-flexbox-left-item-link-text" 
+                          >
+                          我的專頁
+                          </a>
+                        </li>
+                        <li class="work-shop-footer-flexbox-left-item-link">
+                          <a
+                            href="#"
+                            class="work-shop-footer-flexbox-left-item-link-text" 
+                          >
+                          偏好設定
+                          </a>
+                        </li>
+                        <li class="work-shop-footer-flexbox-left-item-link">
+                          <a
+                            href="#"
+                            class="work-shop-footer-flexbox-left-item-link-text text-color-red" 
+                           id="footer-logout" >
+                          登出帳號
+                          </a>
+                        </li>
+                        <li class="work-shop-footer-flexbox-left-item-link">
+                            <a
+                              href="#"
+                              class="work-shop-footer-flexbox-left-item-link-text" 
+                            >
+                            英雄榜
+                            </a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="work-shop-footer-flexbox-right">
+                    <div class="work-shop-footer-flexbox-right-group">
+                      <a class="work-shop-footer-flexbox-right-item" href="#">
+                        <span class="work-shop-footer-flexbox-right-item-icon">
+                          <i class="fa-solid fa-gift"></i>
+                        </span>
+                        <span class="work-shop-footer-flexbox-right-item-text"
+                          >用一杯咖啡讓工程師罐罐休息一下</span
+                        >
+                      </a>
+                      <div class="work-shop-footer-flexbox-right-icon-list">
+                        <a href="#">
+                          <i class="fa-brands fa-google-play"></i>
+                        </a>
+                        <a href="#">
+                          <i class="fa-brands fa-apple"></i>
+                        </a>
+                        <a href="#">
+                          <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#">
+                          <i class="fa-brands fa-discord"></i>
+                        </a>
+                        <a href="#">
+                          <i class="fa-solid fa-envelope"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr class="work-shop-footer-hr" />
+                <div class="work-shop-footer-copyright">
+                  <ul class="work-shop-footer-copyright-left">
+                    <li class="work-shop-footer-copyright-left-item">
+                      <a href="#">隱私權政策 </a>
+                    </li>
+                    <li class="work-shop-footer-copyright-left-item">
+                      <a href="#">服務條款</a>
+                    </li>
+                    <li class="work-shop-footer-copyright-left-item">
+                      <a href="#">商業合作</a>
+                    </li>
+                  </ul>
+                  <div class="work-shop-footer-copyright-right">
+                    <span>卡片資料來源 Weiβ Schwarz.</span>
+                    <span>Copyright @ 2023 BottleNeko</span>
+                  </div>
+                </div>
+            </div>
+          </footer>
+        </div>
+    </div>
+</template>
+
+<style scoped>
+@import "@/assets/reset.css";
+@import "@/assets/css/hero-member/page-control.css";
+@import "@/assets/css/hero-member/sidebar.css";
+@import "@/assets/css/hero-member/main-footer.css";
+@import "@/assets/css/hero-member/hero-member.css";
+@import "@/assets/css/hero-member/hero-member-rwd.css";
+</style>
