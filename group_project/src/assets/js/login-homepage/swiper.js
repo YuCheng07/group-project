@@ -1,3 +1,5 @@
+import Swiper from 'swiper/bundle';
+import 'swiper/css/bundle';
 
 const firstSwiper = new Swiper(".first-swiper-container", {
     direction: 'horizontal',
